@@ -17,47 +17,93 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données :  `simple-mvc`
+-- Base de données :  `kevrenn`
 --
+
+
+-- -----------------------------------------------------
+-- Table `workshop`
+-- -----------------------------------------------------
+CREATE TABLE `workshop` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(80) NOT NULL,
+  `image_link` VARCHAR(255) NOT NULL,
+  `description` TEXT(1000) NOT NULL,
+  `member_id` INT NULL,
+  PRIMARY KEY (`id`));
+
+
+-- -----------------------------------------------------
+-- Table `event`
+-- -----------------------------------------------------
+CREATE TABLE `event` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(255) NOT NULL,
+  `date` DATETIME NOT NULL,
+  `description` TEXT(1000) NULL,
+  PRIMARY KEY (`id`));
+
 
 -- --------------------------------------------------------
+-- -----------------------------------------------------
+-- Table `member`
+-- -----------------------------------------------------
+-- CREATE TABLE `member` (
+--   `id` INT NOT NULL AUTO_INCREMENT,
+--   `name` VARCHAR(255) NOT NULL,
+--   `status` VARCHAR(45) NOT NULL,
+--   `photo_link` VARCHAR(80) NULL,
+--   PRIMARY KEY (`id`));
 
---
--- Structure de la table `item`
---
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- -----------------------------------------------------
+-- Table `partner`
+-- -----------------------------------------------------
+-- CREATE TABLE `partner` (
+--   `id` INT NOT NULL AUTO_INCREMENT,
+--   `name` VARCHAR(255) NOT NULL,
+--   `logo_link` VARCHAR(255) NOT NULL,
+--   `url` VARCHAR(80) NOT NULL,
+--   PRIMARY KEY (`id`));
 
---
--- Contenu de la table `item`
---
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
 
---
--- Index pour les tables exportées
---
+-- --
+-- -- Structure de la table `item`
+-- --
 
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
+-- CREATE TABLE `item` (
+--   `id` int(11) UNSIGNED NOT NULL,
+--   `title` varchar(255) NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- AUTO_INCREMENT pour les tables exportées
---
+-- --
+-- -- Contenu de la table `item`
+-- --
 
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- INSERT INTO `item` (`id`, `title`) VALUES
+-- (1, 'Stuff'),
+-- (2, 'Doodads');
+
+-- --
+-- -- Index pour les tables exportées
+-- --
+
+-- --
+-- -- Index pour la table `item`
+-- --
+-- ALTER TABLE `item`
+--   ADD PRIMARY KEY (`id`);
+
+-- --
+-- -- AUTO_INCREMENT pour les tables exportées
+-- --
+
+-- --
+-- -- AUTO_INCREMENT pour la table `item`
+-- --
+-- ALTER TABLE `item`
+--   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+-- /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+-- /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+-- /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
