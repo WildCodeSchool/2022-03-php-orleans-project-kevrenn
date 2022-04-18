@@ -22,6 +22,7 @@
 }
 
 body {
+    background-color: var(--bs-light);
     color: var(--bs-dark);
     font-family: var(--text-font);
     font-size: var(--text-size);

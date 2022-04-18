@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block content %}
+	<h1>Evenements</h1>
+	<h2>A Venir</h2>
+	<div class="container-fluid d-flex justify-content-center gap-5">
+		{% for event in events %}
+
+			<div class="card" style="width: 20rem;">
+				<h3>{{event.name}}</h3>
+				<img src="/assets/images/marrigeday1.jpeg" class="card-img-top" alt="Event">
+				<p>
+					{{event.description}}
+				</p>
+				<p>
+					{{event.date|date("m/d/Y")}}
+				</p>
+				<p>
+					{{event.address}}
+				</p>
+				<button class="btn btn-primary fw-bold">Voir</button>
+			</div>
+		{% endfor %}
+	</div>
+{% endblock %}
