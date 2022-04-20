@@ -1,12 +1,16 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+<link rel="stylesheet" href="/assets/css/workshop.css">
+
+{% endblock %}
 
 {% block content %}
 	<main class="container-fluid">
 		<h1>Atelier</h1>
-		<div class="row">
+		<div class="row ">
 			{% for workshop in workshops %}
-				<div class="col-lg-3 col-md-4 col-sm-6">
+				<div class="col-lg-6 col-md-12">
 					<figure class="card">
 						<h2>{{ workshop.name }}</h2>
 						<img src="assets/images/imagegenatelier.jpg" class="card-img-top" alt="">

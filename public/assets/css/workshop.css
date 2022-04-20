@@ -1,0 +1,10 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    justify-content: space-between;
+    background-color: var(--bs-primary-light);
+    margin: 7rem;
+}
