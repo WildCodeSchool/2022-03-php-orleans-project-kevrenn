@@ -75,7 +75,10 @@ CREATE TABLE event (
 
 INSERT INTO event (`image_link`,`name`,`date`,`description`,`address`) VALUES
 ('marrigeday1.jpeg','Mariage Germignonville',DATE '2022-04-09','Le Marriage du Mariage Germignonville',"Chateau d'orleans"),
-('homecoming.jpeg','Rentrée en féte',DATE '2022-05-09','La rentée en féte',"Chadedral d'orleans"),
+('homecoming.jpeg','Rentrée en Féte',DATE '2022-05-09','La Rentée en Féte',"Chadedral d'orleans"),
+('marrige.jpeg',' Mariage La Ferté',DATE '2022-09-09','Le  Mariage La Ferté',"Chateau d'orleans"),
+('marrigeday1.jpeg','Mariage Germignonville',DATE '2022-04-09','Le Marriage du Mariage Germignonville',"Chateau d'orleans"),
+('homecoming.jpeg','Rentrée en Féte',DATE '2022-05-09','La Rentée en Féte',"Chadedral d'orleans"),
 ('marrige.jpeg',' Mariage La Ferté',DATE '2022-09-09','Le  Mariage La Ferté',"Chateau d'orleans");
 
 /* END OF DATABASE FOR EVENTS */

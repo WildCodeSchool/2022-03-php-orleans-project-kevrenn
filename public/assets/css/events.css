@@ -1,0 +1,25 @@
+h1,h2
+{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+
+p{
+    margin: 1rem;
+    color: aliceblue;
+}
+
+
+
+.border-secondary{
+    margin-bottom: 5rem;
+}
+.card{
+    background-color: var(--bs-primary);
+}
+
+button{
+    background-color: aliceblue;
+}
