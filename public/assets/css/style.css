@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'eagle_lakeregular';
+    src: url('../font/eaglelake-regular-webfont.woff2') format('woff2'),
+        url('../font/eaglelake-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;800&display=swap');
+@import 'navbar.css';
+
+:root {
+    --bs-primary-rgb: 0, 92, 103;
+    --bs-primary: rgb(var(--bs-primary-rgb));
+    --bs-secondary: #478A78;
+    --bs-primary-light: #8EBEC8;
+    --bs-dark: #0D363F;
+    --bs-light: #EAEDEC;
+    --tittle-font: 'eagle_lakeregular', arial;
+    --text-font: 'Poppins', sans-serif;
+    --text-size: 1.2rem;
+
+
+}
+
+body {
+    color: var(--bs-dark);
+    font-family: var(--text-font);
+    font-size: var(--text-size);
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: var(--tittle-font);
+    color: var(--bs-dark);
+}
