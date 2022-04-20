@@ -62,6 +62,8 @@ ALTER TABLE `item`
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
+
+/* DATABASE FOR EVENTS */
 CREATE TABLE event (  
     id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
     image_link VARCHAR(255) NOT NULL,
@@ -70,3 +72,10 @@ CREATE TABLE event (
     description TEXT(1000) NOT NULL,
     address VARCHAR(255) NOT NULL
 );
+
+INSERT INTO event (`image_link`,`name`,`date`,`description`,`address`) VALUES
+('marrigeday1.jpeg','Mariage Germignonville',DATE '2022-04-09','Le Marriage du Mariage Germignonville',"Chateau d'orleans"),
+('homecoming.jpeg','Rentrée en féte',DATE '2022-05-09','La rentée en féte',"Chadedral d'orleans"),
+('marrige.jpeg',' Mariage La Ferté',DATE '2022-09-09','Le  Mariage La Ferté',"Chateau d'orleans");
+
+/* END OF DATABASE FOR EVENTS */
