@@ -12,14 +12,14 @@ section {
     justify-content: center;
 }
 
-.dentelle-gauche {
+.left-lace {
     width: 10%;
     position: relative;
     left: 35px;
     top: 30px
 }
 
-.dentelle-droite {
+.right-lace {
     width: 10%;
     position: relative;
     right: 35px;
