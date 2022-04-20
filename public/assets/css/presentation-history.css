@@ -1,0 +1,27 @@
+section {
+    margin-block-start: 4rem;
+}
+
+.history img + .presentation img {
+    width: clamp(300px, 40vw, 600px);
+}
+
+.title {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.dentelle-gauche {
+    width: 10%;
+    position: relative;
+    left: 35px;
+    top: 30px
+}
+
+.dentelle-droite {
+    width: 10%;
+    position: relative;
+    right: 35px;
+    top: 30px
+}
