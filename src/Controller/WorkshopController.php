@@ -2,13 +2,17 @@
 
 namespace App\Controller;
 
+use App\Model\WorkshopManager;
+
 class WorkshopController extends AbstractController
 {
-    /**
-     * Display home page
-     */
+
     public function index(): string
     {
-        return $this->twig->render('Workshop/index.html.twig');
+        $workshopManager = new WorkshopManager();
+        $workshops = $workshopManager->selectAll();
+
+        return $this->twig->render('Workshop/index.html.twig', ['workshops' => $workshops,]);
+
     }
 }

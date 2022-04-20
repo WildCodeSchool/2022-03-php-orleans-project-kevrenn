@@ -1,5 +1,23 @@
 {% extends 'layout.html.twig' %}
 
+
 {% block content %}
-    <h1>Atelier</h1>
+	<main class="container-fluid">
+		<h1>Atelier</h1>
+		<div class="row">
+			{% for workshop in workshops %}
+				<div class="col-lg-3 col-md-4 col-sm-6">
+					<figure class="card">
+						<h2>{{ workshop.name }}</h2>
+						<img src="assets/images/imagegenatelier.jpg" class="card-img-top" alt="">
+						<figcaption class="card-body">
+							<p class="card-text">
+								{{ workshop.description }}
+							</p>
+						</figcaption>
+					</figure>
+				</div>
+			{% endfor %}
+		</div>
+	</main>
 {% endblock %}
