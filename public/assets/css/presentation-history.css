@@ -12,15 +12,15 @@ section {
     justify-content: center;
 }
 
-.left-lace {
-    width: 10%;
+h2::before {
+    content: url('/assets/images/dentelle-gauche.png');
     position: relative;
     left: 35px;
     top: 30px
 }
 
-.right-lace {
-    width: 10%;
+h2::after {
+    content: url('/assets/images/dentelle-droite.png');
     position: relative;
     right: 35px;
     top: 30px
