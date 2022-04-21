@@ -16,6 +16,29 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
 
+-- Base de données :  `kevrenn`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `member`
+--
+CREATE TABLE `member` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `photo_link` VARCHAR(80) NULL);
+
+INSERT INTO `member` (`name`, `status`, `photo_link`) VALUES
+('Titouan Kervadec', 'Président', 'Titouan-Kervadec.jpeg'),
+('Nolwen Kervadec', 'Trésorière', 'Nolwen-Kervadec.jpeg'),
+('Gwenn Gallouedec', 'Secrétaire', 'Gwenn-Gallouedec.jpeg');
+
+
+
+
+
 --
 -- Base de données :  `simple-mvc`
 --
