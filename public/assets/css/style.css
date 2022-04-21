@@ -7,7 +7,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;800&display=swap');
-@import 'navbar.css';
+
 
 :root {
     --bs-primary-rgb: 0, 92, 103;
@@ -34,3 +34,4 @@ h1, h2, h3 {
     font-family: var(--tittle-font);
     color: var(--bs-dark);
 }
+
