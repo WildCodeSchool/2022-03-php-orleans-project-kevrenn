@@ -9,7 +9,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500;800&display=swap');
 
 :root {
-    --bs-primary: #005C67;
+    --bs-primary: #005c67;
     --bs-secondary: #478A78;
     --bs-primary-light: #8EBEC8;
     --bs-dark: #0D363F;
@@ -26,9 +26,14 @@ body {
     font-family: var(--text-font);
     font-size: var(--text-size);
     margin: 0;
+    background-color: var(--bs-light);
 }
 
 h1, h2, h3 {
     font-family: var(--tittle-font);
     color: var(--bs-dark);
+}
+
+button{
+    font-size: var(--text-size);
 }

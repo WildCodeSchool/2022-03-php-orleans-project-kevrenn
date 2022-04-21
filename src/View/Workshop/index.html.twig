@@ -1,24 +1,25 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
-<link rel="stylesheet" href="/assets/css/workshop.css">
+	<link rel="stylesheet" href="/assets/css/workshop.css">
 
 {% endblock %}
 
 {% block content %}
-	<main class="container-fluid">
-		<h1>Atelier</h1>
+	<main class="container">
+		<h1 class="m-5">Ateliers</h1>
 		<div class="row ">
 			{% for workshop in workshops %}
-				<div class="col-lg-6 col-md-12">
+				<div class="col-lg-6 col-md-12 p-5">
 					<figure class="card">
-						<h2>{{ workshop.name }}</h2>
-						<img src="assets/images/imagegenatelier.jpg" class="card-img-top" alt="">
-						<figcaption class="card-body">
-							<p class="card-text">
+						<h2 class="p-3">{{ workshop.name }}</h2>
+						<img src="assets/images/placehorderworkshop.jpg" class="card-img-top" alt="">
+						<figcaption class="card-body d-flex align-items-center">
+							<p class="card-text p-3">
 								{{ workshop.description }}
 							</p>
 						</figcaption>
+						<a href="#" class="btn w-50 m-auto mb-5 d-flex">Inscription</a>
 					</figure>
 				</div>
 			{% endfor %}
