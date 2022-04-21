@@ -22,3 +22,8 @@ figcaption{
     color: var(--bs-dark);
     background-color: var(--bs-light);
 }
+
+.btn:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
