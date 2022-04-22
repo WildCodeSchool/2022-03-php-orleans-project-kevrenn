@@ -20,6 +20,7 @@ SET time_zone = "+00:00";
 -- Base de données :  `simple-mvc`
 --
 
+
 -- --------------------------------------------------------
 
 --
@@ -82,6 +83,7 @@ INSERT INTO event (`image_link`,`name`,`date`,`description`,`address`) VALUES
 ('wedding.jpeg',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans");
 
 /* END OF DATABASE FOR EVENTS */
+
 CREATE TABLE IF NOT EXISTS `workshop` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(155) NOT NULL,
