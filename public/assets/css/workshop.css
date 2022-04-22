@@ -1,0 +1,29 @@
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+h2{
+    color: var(--bs-light);
+    display: flex;
+    justify-content: center;
+}
+
+.card{
+    background-color: var(--bs-primary);
+    color: var(--bs-light);
+}
+
+figcaption{
+    min-height: 50vh;
+}
+
+.btn{
+    color: var(--bs-dark);
+    background-color: var(--bs-light);
+}
+
+.btn:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
