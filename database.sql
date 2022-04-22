@@ -31,9 +31,9 @@ CREATE TABLE `member` (
   `photo_link` VARCHAR(80) NULL);
 
 INSERT INTO `member` (`name`, `status`, `photo_link`) VALUES
-('Titouan Kervadec', 'Président', 'Titouan-Kervadec.jpeg'),
-('Nolwen Kervadec', 'Trésorière', 'Nolwen-Kervadec.jpeg'),
-('Gwenn Gallouedec', 'Secrétaire', 'Gwenn-Gallouedec.jpeg');
+('Titouan Kervadec', 'Président', ''),
+('Nolwen Kervadec', 'Trésorière', ''),
+('Gwenn Gallouedec', 'Secrétaire', '');
 
 
 

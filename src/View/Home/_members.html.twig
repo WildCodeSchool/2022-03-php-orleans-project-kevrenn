@@ -7,8 +7,15 @@
 			<div class="col-lg-3 m-3 bg-primary text-light">
 				<div class="card-body d-flex flex-column align-items-center justify-content-between">
 					<h4 class="card-title">{{ member.name }}</h4>
-					<img src="/assets/images/{{ member.photo_link }}" class="card-img-top w-50 rounded-circle m-2" alt="{{ member.name }}">
-					<p class="card-text">{{ member.status }} </p>
+					<img src="/assets/images/
+											{% if member.photo_link %}
+												{{ member.photo_link }}
+											{% else %}
+												{{ 'portrait-placeholder.png' }}" 
+											{% endif %} 
+						class="card-img-top w-50 rounded-circle m-2" alt="{{ member.name }}">
+					<p class="card-text">{{ member.status }}
+					</p>
 				</div>
 			</div>
 		{% endfor %}
