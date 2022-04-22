@@ -34,8 +34,23 @@ h1, h2, h3 {
     color: var(--bs-dark);
 }
 
-
 button{
     font-size: var(--text-size);
+}
+
+header {
+    background: url("/assets/images/orleans_home.jpg") no-repeat right;
+    background-size: cover;
+    height: 80vh;
+}
+
+.header {
+    position: relative;
+    top: 30vh;
+    left: 20vw;
+}
+
+.header h1 {
+    font-size: clamp(30px, 20rem, 60px);
 }
 
