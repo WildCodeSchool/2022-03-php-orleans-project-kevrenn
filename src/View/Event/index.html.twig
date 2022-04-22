@@ -17,7 +17,7 @@
 						<h3>
 							{{event.name}}
 						</h3>
-						<img class="card" src={% if events.image_link is not empty %} "assets/images/{{event.image_link}}" {% else %} "assets/images/{{event.image_link}}" {% endif %} alt="{{ event.name }}">
+						<img class="card" src={% if event.image_link is empty %}"assets/images/placeholderevent.jpeg" {% endif %} alt="{{ event.name }}">
 						
 						<p class = "date">
 							<svg xmlns="http://www.w3.org/2000/svg" width="35" height="26" fill="currentColor" class="bi bi-calendar4 mt-1" viewbox="0 0 16 16">

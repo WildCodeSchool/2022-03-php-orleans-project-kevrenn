@@ -75,12 +75,12 @@ CREATE TABLE event (
 );
 
 INSERT INTO event (`image_link`,`name`,`date`,`description`,`address`) VALUES
-('weddingDay1.jpeg','Mariage Germignonville',DATE '2022-04-09','Le Marriage du Mariage Germignonville',"Chateau d'Orléans"),
-('homecoming.jpeg','Rentrée en Féte',DATE '2022-05-09','La Rentée en Féte',"Cathédrale d'Orléans"),
-('wedding.jpeg',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans"),
-('weddingDay1.jpeg','Mariage Germignonville',DATE '2022-04-09','Le Marriage du Mariage Germignonville',"Chateau d'Orléans"),
-('homecoming.jpeg','Rentrée en Féte',DATE '2022-05-09','La Rentée en Féte',"Cathédrale d'Orléans"),
-('wedding.jpeg',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans");
+('','Mariage Germignonville',DATE '2022-04-09','Le Mariage Germignonville',"Chateau d'Orléans"),
+('','Rentrée en Féte',DATE '2022-05-09','La Rentrée en Fête',"Cathédrale d'Orléans"),
+('',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans"),
+('','Mariage Germignonville',DATE '2022-04-09','Le Mariage Germignonville',"Chateau d'Orléans"),
+('','Rentrée en Féte',DATE '2022-05-09','La Rentrée en Fête',"Cathédrale d'Orléans"),
+('',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans");
 
 /* END OF DATABASE FOR EVENTS */
 
