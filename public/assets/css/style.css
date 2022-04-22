@@ -10,8 +10,10 @@
 
 
 :root {
+
     --bs-primary-rgb: 0, 92, 103;
     --bs-primary: rgb(var(--bs-primary-rgb));
+
     --bs-secondary: #478A78;
     --bs-primary-light: #8EBEC8;
     --bs-dark: #0D363F;
@@ -28,10 +30,15 @@ body {
     font-family: var(--text-font);
     font-size: var(--text-size);
     margin: 0;
+    background-color: var(--bs-light);
 }
 
 h1, h2, h3 {
     font-family: var(--tittle-font);
     color: var(--bs-dark);
+}
+
+button{
+    font-size: var(--text-size);
 }
 
