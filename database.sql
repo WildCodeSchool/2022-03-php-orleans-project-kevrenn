@@ -19,6 +19,71 @@ SET time_zone = "+00:00";
 --
 -- Base de données :  `simple-mvc`
 --
+
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `item`
+--
+
+CREATE TABLE `item` (
+  `id` int(11) UNSIGNED NOT NULL,
+  `title` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `item`
+--
+
+INSERT INTO `item` (`id`, `title`) VALUES
+(1, 'Stuff'),
+(2, 'Doodads');
+
+--
+-- Index pour les tables exportées
+--
+
+--
+-- Index pour la table `item`
+--
+ALTER TABLE `item`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT pour les tables exportées
+--
+
+--
+-- AUTO_INCREMENT pour la table `item`
+--
+ALTER TABLE `item`
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+
+/* DATABASE FOR EVENTS */
+CREATE TABLE event (  
+    id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    image_link VARCHAR(255) NOT NULL,
+    name VARCHAR(80) NOT NULL,
+    date DATETIME NOT NULL,
+    description TEXT(1000) NOT NULL,
+    address VARCHAR(255) NOT NULL
+);
+
+INSERT INTO event (`image_link`,`name`,`date`,`description`,`address`) VALUES
+('','Mariage Germignonville',DATE '2022-04-09','Le Mariage Germignonville',"Chateau d'Orléans"),
+('','Rentrée en Féte',DATE '2022-05-09','La Rentrée en Fête',"Cathédrale d'Orléans"),
+('',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans"),
+('','Mariage Germignonville',DATE '2022-04-09','Le Mariage Germignonville',"Chateau d'Orléans"),
+('','Rentrée en Féte',DATE '2022-05-09','La Rentrée en Fête',"Cathédrale d'Orléans"),
+('',' Mariage La Ferté',DATE '2022-09-09','Le Mariage La Ferté',"Château d'Orléans");
+
+/* END OF DATABASE FOR EVENTS */
+
 CREATE TABLE IF NOT EXISTS `workshop` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(155) NOT NULL,
