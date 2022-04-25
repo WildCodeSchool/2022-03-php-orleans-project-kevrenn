@@ -1,0 +1,50 @@
+h1,
+h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+h3 {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: aliceblue;
+}
+p {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    color: aliceblue;
+}
+
+.date{
+    font-size: 1.6rem;
+    margin-top: 1.5rem;
+    
+}
+
+.icon-event {
+    display: flex;
+    justify-content: center;
+    width: 2rem;
+}
+
+.border-secondary {
+    margin-bottom: 5rem;
+}
+.card {
+    background-color: var(--bs-primary);
+    
+    
+}
+
+.btn {
+    background-color: aliceblue;
+    color: var(--bs-dark);
+}
+.btn:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
