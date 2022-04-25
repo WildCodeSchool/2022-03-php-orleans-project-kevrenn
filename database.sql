@@ -8,16 +8,28 @@
 -- Version de PHP :  7.0.22-0ubuntu0.16.04.1
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */
-;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */
-;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */
-;
-/*!40101 SET NAMES utf8mb4 */
-;
+
+
+-- Base de données :  `kevrenn`
 --
--- Base de données :  `simple-mvc`
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `member`
+--
+CREATE TABLE `member` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `name` VARCHAR(255) NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `photo_link` VARCHAR(80) NULL);
+
+INSERT INTO `member` (`name`, `status`, `photo_link`) VALUES
+('Titouan Kervadec', 'Président', ''),
+('Nolwen Kervadec', 'Trésorière', ''),
+('Gwenn Gallouedec', 'Secrétaire', '');
+
+
 --
 
 

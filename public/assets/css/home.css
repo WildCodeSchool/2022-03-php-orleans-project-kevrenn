@@ -25,3 +25,17 @@ h2::after {
     right: 35px;
     top: 30px
 }
+
+.members>h2::after {
+    content: url('/assets/images/dentelle-droite-blanche.png');
+    position: relative;
+    right: 35px;
+    top: 30px
+}
+
+.members>h2::before {
+    content: url('/assets/images/dentelle-gauche-blanche.png');
+    position: relative;
+    left: 35px;
+    top: 30px
+}
