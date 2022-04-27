@@ -12,6 +12,7 @@ h2{
 .card{
     background-color: var(--bs-primary);
     color: var(--bs-light);
+    height: 900px;
 }
 
 figcaption{
@@ -21,6 +22,7 @@ figcaption{
 .btn{
     color: var(--bs-dark);
     background-color: var(--bs-light);
+    font-size: var(--text-size);
 }
 
 .btn:hover{
