@@ -1,0 +1,23 @@
+{% extends 'layout.html.twig' %}
+{% block header %}
+{% endblock %}
+{% block content %}
+	<main>
+		<h1 class="m-5">Admin membres</h1>
+		<div class="row container-fluid d-flex justify-content-center">
+			{% for member in members %}
+				<div class="card col-lg-3 m-2 d-flex flex-row justify-content-between">
+					<div class="d-flex flex-column justify-content-center">
+						<h4 class="member-name">{{ member.name }}</h4>
+						<p class="card-text">{{ member.status }}</p>
+					</div>
+					<img class="m-2" src="/assets/images/
+							{% if member.photo_link %}
+								{{ member.photo_link }}
+							{% else %}
+								{{ 'portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}" width="100px" height="100px">
+				</div>
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}

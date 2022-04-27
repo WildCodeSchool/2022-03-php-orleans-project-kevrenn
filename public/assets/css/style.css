@@ -10,19 +10,15 @@
 
 
 :root {
-
     --bs-primary-rgb: 0, 92, 103;
     --bs-primary: rgb(var(--bs-primary-rgb));
-
     --bs-secondary: #478A78;
     --bs-primary-light: #8EBEC8;
     --bs-dark: #0D363F;
     --bs-light: #EAEDEC;
-    --tittle-font: 'eagle_lakeregular', arial;
+    --title-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
     --text-size: 1.2rem;
-    
-
 }
 
 body {
@@ -34,11 +30,10 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: var(--tittle-font);
+    font-family: var(--title-font);
     color: var(--bs-dark);
 }
 
 button{
     font-size: var(--text-size);
 }
-
