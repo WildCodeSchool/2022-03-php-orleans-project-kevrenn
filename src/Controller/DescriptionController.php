@@ -13,6 +13,4 @@ class DescriptionController extends AbstractController
 
         return $this->twig->render('Event/description.html.twig', ['descriptions' => $descriptions]);
     }
-
-   
 }
