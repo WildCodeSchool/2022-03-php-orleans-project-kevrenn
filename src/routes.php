@@ -16,5 +16,9 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'events' => ['EventController', 'index'],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
+<<<<<<< HEAD
     'login' => ['LoginController', 'login'],
+=======
+    'admin/membres' => ['AdminMemberController', 'index'],
+>>>>>>> 12bc28aad3bead0017398cadd9a33b332c2386dd
 ];
