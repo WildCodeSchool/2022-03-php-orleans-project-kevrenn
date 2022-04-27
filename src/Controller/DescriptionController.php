@@ -6,11 +6,11 @@ use App\Model\DescriptionManager;
 
 class DescriptionController extends AbstractController
 {
-    public function index()
+    public function show(int $id): string
     {
         $descriptionManager = new DescriptionManager();
-        $descriptions = $descriptionManager->selectALL();
+        $description = $descriptionManager->selectOneById($id);
 
-        return $this->twig->render('Event/description.html.twig', ['descriptions' => $descriptions]);
+        return $this->twig->render('Event/description.html.twig', ['description' => $description]);
     }
 }
