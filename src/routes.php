@@ -14,5 +14,6 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
-    'events' => ['EventController', 'index']
+    'events' => ['EventController', 'index'],
+    'descriptions' => ['DescriptionController','index',]
 ];
