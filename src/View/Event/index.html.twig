@@ -8,7 +8,7 @@
 			<h1>Évènements</h1>
 		</div>
 		<div class="toComeTitle">
-			<h2>À Venir</h2>
+			<h2>A Venir</h2>
 		</div>
 		<div class="row">
 			{% for event in events %}
@@ -19,8 +19,8 @@
 						</h3>
 						<img class="card" src={% if event.image_link is empty %}"assets/images/placeholderevent.jpeg" {% endif %} alt="{{ event.name }}">
 						
-						<p class = "date">
-							<svg xmlns="http://www.w3.org/2000/svg" width="35" height="26" fill="currentColor" class="bi bi-calendar4 mt-1" viewbox="0 0 16 16">
+						<p class = "date align-items-baseline">
+							<svg xmlns="http://www.w3.org/2000/svg" width="32" height="22" fill="currentColor" class="bi bi-calendar4 mt-1" viewbox="0 0 16 16">
 								<path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM2 2a1 1 0 0 0-1 1v1h14V3a1 1 0 0 0-1-1H2zm13 3H1v9a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V5z"/>
 							</svg>
 							{{event.date|date("m/d/Y")}}
@@ -36,7 +36,7 @@
 					</div>
 				</div>
 			{% endfor %}
-			<h2>Passé</h2>
+			<h2>Passés</h2>
 		</div>
 	</main>
 {% endblock %}

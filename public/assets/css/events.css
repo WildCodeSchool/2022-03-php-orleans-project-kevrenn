@@ -1,9 +1,16 @@
+h1 {
+    font-size: var(--title-sizeh1)
+}
 h1,
 h2 {
     display: flex;
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
+    
+}
+h2 {
+    font-size: var(--title-sizeh2)
 }
 h3 {
     display: flex;
@@ -11,23 +18,19 @@ h3 {
     margin-top: 1.5rem;
     margin-bottom: 1.5rem;
     color: aliceblue;
+    font-size: var(--title-sizeh3)
 }
 p {
     display: flex;
     justify-content: center;
     color: aliceblue;
+
 }
 
 .date{
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     margin-top: 1.5rem;
     
-}
-
-.icon-event {
-    display: flex;
-    justify-content: center;
-    width: 2rem;
 }
 
 .border-secondary {

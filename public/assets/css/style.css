@@ -20,7 +20,11 @@
     --bs-light: #EAEDEC;
     --tittle-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
-    --text-size: 1.2rem;
+    --text-size: 20px;
+    --title-sizeh1: 50px; 
+    --title-sizeh2: 38px;
+    --title-sizeh3: 26px;
+    
     
 
 }
