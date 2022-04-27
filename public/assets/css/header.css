@@ -18,9 +18,13 @@ header {
     background-position: 50% 0;
 }
 
-.header>h1, .header>h3 {
+.header>h1, .header>h2 {
     color: var(--bs-primary);
     z-index: 1;
     font-weight: bold;
     text-shadow: -2px -5px 10px var(--bs-light);
+}
+
+.header>h2::before, .header>h2::after {
+    display: none;
 }
