@@ -1,0 +1,25 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/workshop.css">
+
+{% endblock %}
+
+{% block content %}
+	<main class="container">
+		<h1 class="m-5">Admin ateliers</h1>
+		<div class="row ">
+			<ul>
+				{% for workshop in workshops %}
+					<li>
+						<p>{{ workshop.name }}</p>
+
+						<p>
+							{{ workshop.description }}
+						</p>
+					</li>
+				</ul>
+			{% endfor %}
+		</div>
+	</main>
+{% endblock %}
