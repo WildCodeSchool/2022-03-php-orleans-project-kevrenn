@@ -6,7 +6,7 @@ use App\Model\EventManager;
 
 class AdminEventController extends AbstractController
 {
-    public function index():string
+    public function index(): string
     {
         $eventManager = new EventManager();
         $events = $eventManager->selectALL();
