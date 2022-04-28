@@ -4,13 +4,13 @@ namespace App\Controller;
 
 use App\Model\EventManager;
 
-class EventController extends AbstractController
+class AdminEventController extends AbstractController
 {
     public function index():string
     {
         $eventManager = new EventManager();
         $events = $eventManager->selectALL();
 
-        return $this->twig->render('Event/index.html.twig', ['events' => $events]);
+        return $this->twig->render('Admin/Event/index.html.twig', ['events' => $events]);
     }
 }
