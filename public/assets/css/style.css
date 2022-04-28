@@ -42,3 +42,6 @@ button{
     font-size: var(--text-size);
 }
 
+.logo {
+    height: 45px;
+}
