@@ -13,4 +13,12 @@ class EventController extends AbstractController
 
         return $this->twig->render('Event/index.html.twig', ['events' => $events]);
     }
+
+    public function show(int $id): string
+    {
+        $eventManager = new EventManager();
+        $events = $eventManager->selectOneById($id);
+
+        return $this->twig->render('Event/description.html.twig', ['description' => $events]);
+    }
 }
