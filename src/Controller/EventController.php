@@ -9,7 +9,7 @@ class EventController extends AbstractController
     public function index()
     {
         $eventManager = new EventManager();
-        $events = $eventManager->selectAll('date','DESC');
+        $events = $eventManager->selectAll('date', 'DESC');
 
         return $this->twig->render('Event/index.html.twig', ['events' => $events]);
     }
