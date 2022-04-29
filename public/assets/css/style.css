@@ -18,7 +18,12 @@
     --bs-light: #EAEDEC;
     --title-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
-    --text-size: 1.2rem;
+
+    --text-size: 1.25rem;
+    --title-sizeh1:calc(var(--text-size) * 3); 
+    --title-sizeh2:calc(var(--text-size) * 2); 
+    --title-sizeh3:calc(var(--text-size) * 1.5); 
+    
 }
 
 body {
@@ -37,3 +42,9 @@ h1, h2, h3 {
 button{
     font-size: var(--text-size);
 }
+
+
+.logo {
+    height: 45px;
+}
+
