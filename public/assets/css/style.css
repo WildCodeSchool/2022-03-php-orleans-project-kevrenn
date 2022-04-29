@@ -37,3 +37,9 @@ h1, h2, h3 {
 button{
     font-size: var(--text-size);
 }
+
+
+.logo {
+    height: 45px;
+}
+
