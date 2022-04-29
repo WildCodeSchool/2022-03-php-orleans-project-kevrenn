@@ -24,7 +24,7 @@
 				<button class="btn"><a class="text-decoration-none" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a></button>
 				<form class="mx-5" action="/admin/membres/modifier" method="POST">
 					<input type="hidden" name="id" value="{{ member.id }}">
-					<button class="btn">Supprimer</button>
+					<button class="btn disabled">Supprimer</button>
 				</form>
 				<button class="btn"><a class="text-decoration-none" href="/admin/membres/">Retour à la liste des membres</a></button>
 			</div>
