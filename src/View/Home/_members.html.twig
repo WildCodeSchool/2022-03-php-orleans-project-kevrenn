@@ -1,0 +1,23 @@
+<section class="members d-flex flex-column justify-content-center bg-primary">
+
+	<h2 class="card-title mt-4 text-center text-light">Membres principaux</h2>
+
+	<div class="row d-flex justify-content-center bg-primary mt-3">
+		{% for member in members %}
+			<div class="col-lg-3 m-3 bg-primary text-light">
+				<div class="card-body d-flex flex-column align-items-center justify-content-between">
+					<h4 class="member-name">{{ member.name }}</h4>
+					<img src="/assets/images/
+											{% if member.photo_link %}
+												{{ member.photo_link }}
+											{% else %}
+												{{ 'portrait-placeholder.png' }}" 
+											{% endif %} 
+						class="card-img-top w-50 rounded-circle m-2" alt="{{ member.name }}">
+					<p class="card-text">{{ member.status }}
+					</p>
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+</section>
