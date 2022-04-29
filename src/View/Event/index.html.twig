@@ -12,9 +12,9 @@
 		</div>
 		<div class="row">
 			{% for event in events %}
-				{% if event.date > 'now'|date("Y-m-d") %}
+			{% if event.date > 'now'|date("Y-m-d") %}
 					{% include "Includes/_card.html.twig" %}
-				{% endif %}
+			{% endif %}
 			{% endfor %}
 			<h2>Passé</h2>
 			{% for event in events %}
