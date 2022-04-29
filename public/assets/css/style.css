@@ -10,23 +10,20 @@
 
 
 :root {
-
     --bs-primary-rgb: 0, 92, 103;
     --bs-primary: rgb(var(--bs-primary-rgb));
-
     --bs-secondary: #478A78;
     --bs-primary-light: #8EBEC8;
     --bs-dark: #0D363F;
     --bs-light: #EAEDEC;
-    --tittle-font: 'eagle_lakeregular', arial;
+    --title-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
+
     --text-size: 1.25rem;
     --title-sizeh1:calc(var(--text-size) * 3); 
     --title-sizeh2:calc(var(--text-size) * 2); 
     --title-sizeh3:calc(var(--text-size) * 1.5); 
     
-    
-
 }
 
 body {
@@ -38,11 +35,10 @@ body {
 }
 
 h1, h2, h3 {
-    font-family: var(--tittle-font);
+    font-family: var(--title-font);
     color: var(--bs-dark);
 }
 
 button{
     font-size: var(--text-size);
 }
-
