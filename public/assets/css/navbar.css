@@ -1,10 +1,9 @@
-.navbar-brand p{
+.navbar-brand p {
     font-family: var(--title-font);
     margin: auto;
-   
 }
 
-.navbar-brand{
+.navbar-brand {
     display: flex;
     flex-direction: row;
 }
