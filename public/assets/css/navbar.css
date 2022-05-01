@@ -1,0 +1,10 @@
+.navbar-brand p{
+    font-family: var(--title-font);
+    margin: auto;
+   
+}
+
+.navbar-brand{
+    display: flex;
+    flex-direction: row;
+}
