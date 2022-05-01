@@ -2,12 +2,15 @@
 
 
 {% block stylesheet %}
-    <link rel="stylesheet" href="/assets/css/presentation-history.css">
+	<link rel="stylesheet" href="/assets/css/presentation-history.css">
+	<link rel="stylesheet" href="/assets/css/header.css">
+  <link rel="stylesheet" href="/assets/css/home.css">
 {% endblock %}
 
 {% block content %}
-    {% include "/Home/_presentation-history.html.twig" %}
-    {% include "/Home/_bagad-cercle.html.twig" %}
-
+	{% include "/Home/_header.html.twig" %}
+  {% include "/Home/_presentation-history.html.twig" %}
+  {% include "/Home/_members.html.twig" %}
+  {% include "/Home/_bagad-cercle.html.twig" %}
 {% endblock %}
 

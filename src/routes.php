@@ -18,4 +18,7 @@ return [
     'admin/evenements' => ['AdminEventController', 'index',],
     'admin/evenements/edit' => ['AdminEventController', 'edit', ['id']],
     'admin/evenements/show' => ['AdminEventController', 'show', ['id']],
+    'evenement' => ['EventController','show', ['id']],
+    'admin/atelier' => ['AdminWorkshopController', 'index'],
+    'admin/membres' => ['AdminMemberController', 'index'],
 ];
