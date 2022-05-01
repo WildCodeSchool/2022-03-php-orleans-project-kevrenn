@@ -18,5 +18,4 @@ return [
     'admin/evenements' => ['AdminEventController', 'index',],
     'admin/evenements/edit' => ['AdminEventController', 'edit', ['id']],
     'admin/evenements/show' => ['AdminEventController', 'show', ['id']],
-    
 ];
