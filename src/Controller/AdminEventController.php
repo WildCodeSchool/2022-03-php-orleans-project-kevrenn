@@ -21,15 +21,4 @@ class AdminEventController extends AbstractController
 
         return $this->twig->render('/Admin/Event/show.html.twig', ['event' => $event]);
     }
-
-
-
-
-
-
-
-
-
-
-
 }

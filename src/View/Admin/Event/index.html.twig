@@ -11,6 +11,8 @@
 				{% for event in events %}
 					<tr>
 						<th>{{ event.name }}</th>
+						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/event/modifier?id={{ event.id }}">Modifier</a></button></th>
+						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/event/detail?id={{ event.id }}">Supprimer</a></button></th>
 					</tr>
 				{% endfor %}
 			</tbody>
