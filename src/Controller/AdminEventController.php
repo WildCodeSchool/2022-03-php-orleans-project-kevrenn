@@ -19,7 +19,7 @@ class AdminEventController extends AbstractController
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);
 
-        return $this->twig->render('/Admin/Event/show.html.twig', ['event' => $event]);
+        return $this->twig->render('/Admin/Event/_show.html.twig', ['event' => $event]);
     }
 
     public function edit(int $id): ?string
@@ -33,12 +33,12 @@ class AdminEventController extends AbstractController
             // TODO validations (length, format...)
             $eventManager->update($event);
 
-            header('Location: Admin/Event/show?id=' . $id);
+            header('Location: Admin/Event/_show?id=' . $id);
 
             return null;
         }
 
-        return $this->twig->render('Admin/Event/edit.html.twig', [
+        return $this->twig->render('Admin/Event/_edit.html.twig', [
             'event' => $event,
         ]);
     }
