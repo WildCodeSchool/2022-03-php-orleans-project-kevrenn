@@ -1,4 +1,3 @@
-
 {% if errors is not empty %}
 	<div class="d-flex flex-column align-items-center col-4 mt-2  w-100">
 		<ul>
@@ -27,10 +26,6 @@
 	<input type="text" value="{{ event.image_link }}" name="image" id="image">
 
 
-
-
-
-
-
 	<button class="btn w-25 my-2 align-self-center">Envoi</button>
 </form>
+{% block footer %}{% endblock %}
