@@ -18,15 +18,7 @@ class AdminMemberController extends AbstractController
         return $this->twig->render('Admin/Member/index.html.twig', ['members' => $members]);
     }
 
-    public function show(int $id): string
-    {
-        $memberManager = new MemberManager();
-        $member = $memberManager->selectOneById($id);
-
-        return $this->twig->render('/Admin/Member/show.html.twig', ['member' => $member]);
-    }
-
-    private function isItEmpty(string $label, $input): void
+    private function isEmpty(string $label, $input): void
     {
         if (empty($input)) {
             $this->errors[] = "$label ne peut pas être vide";
@@ -48,14 +40,14 @@ class AdminMemberController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $member = array_map('trim', $_POST);
 
-            $this->isItEmpty('Nom', $member['name']);
-            $this->isItEmpty('Statut', $member['status']);
+            $this->isEmpty('Nom', $member['name']);
+            $this->isEmpty('Statut', $member['status']);
             $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
             $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
 
             if (empty($this->errors)) {
                 $memberManager->update($member);
-                header('Location: /admin/membres/detail?id=' . $id);
+                header('Location: /admin/membres');
             }
         }
 

@@ -23,8 +23,7 @@
 								{{ 'portrait-placeholder.png' }}" 
 							{% endif %} alt="{{ member.name }}" width="100px" height="100px">
 					<div class="d-flex flex-column justify-content-center">
-						<button class="btn my-1"><a class="text-decoration-none" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a></button>
-						<button class="btn my-1"><a class="text-decoration-none" href="/admin/membres/detail?id={{ member.id }}">Détail</a></button>
+						<a class="text-decoration-none btn my-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
 					</div>
 				</div>
 			{% endfor %}
