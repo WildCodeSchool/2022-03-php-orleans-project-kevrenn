@@ -19,4 +19,5 @@ return [
     'evenement' => ['EventController','show', ['id']],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
     'admin/membres' => ['AdminMemberController', 'index'],
+    'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],
 ];
