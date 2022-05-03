@@ -20,4 +20,5 @@ return [
     'admin/atelier' => ['AdminWorkshopController', 'index'],
     'admin/membres' => ['AdminMemberController', 'index'],
     'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],
+    'admin/membres/supprimer' => ['AdminMemberController', 'delete', ['id']],
 ];

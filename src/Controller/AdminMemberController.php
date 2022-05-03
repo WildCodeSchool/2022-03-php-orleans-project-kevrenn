@@ -61,4 +61,15 @@ class AdminMemberController extends AbstractController
     {
         return $this->errors;
     }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $memberManager = new MemberManager();
+            $memberManager->delete((int)$id);
+
+            header('Location:/admin/membres');
+        }
+    }
 }
