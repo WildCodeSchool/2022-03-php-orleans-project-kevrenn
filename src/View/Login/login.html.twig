@@ -1,8 +1,18 @@
 {% extends 'layout.html.twig' %}
 
 {% block content %}
+<main class="container">
 	<h1>Login</h1>
-	<form method="post" action="" class="container vh-100">
+	{% if errors is not empty %}
+	<div class="d-flex flex-column align-items-center col-4 mt-2  w-100">
+		<ul>
+			{% for error in errors %}
+				<li>{{ error }}</li>
+			{% endfor %}
+		</ul>
+	</div>
+{% endif %}
+	<form method="post" action="" class="vh-100">
 		<div class="mb-3">
 			<label for="email" class="form-label">Email</label>
 			<input type="email" class="form-control" id="email" name="email">
@@ -13,4 +23,5 @@
 		</div>
 		<button type="submit" class="btn btn-primary">Submit</button>
 	</form>
+</main>
 {% endblock %}
