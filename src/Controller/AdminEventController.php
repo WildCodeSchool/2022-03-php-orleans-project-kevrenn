@@ -9,7 +9,7 @@ class AdminEventController extends AbstractController
     public function index(): string
     {
         $eventManager = new EventManager();
-        $events = $eventManager->selectALL();
+        $events = $eventManager->selectAll('date', 'DESC');
 
         return $this->twig->render('Admin/Event/index.html.twig', ['events' => $events]);
     }
