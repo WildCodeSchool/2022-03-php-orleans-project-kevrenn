@@ -4,19 +4,30 @@
 {% endblock %}
 {% block header %}{% endblock %}
 {% block content %}
-	<main class="container">
-		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
-		<table class="table table-hover">
-			<tbody>
-				{% for event in events %}
-					<tr>
-						<th>{{ event.name }}</th>
-						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></button></th>
-						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/show?id={{ event.id }}">Supprimer</a></button></th>
-					</tr>
-				{% endfor %}
-			</tbody>
-		</table>
-	</main>
-{% endblock %}
-{% block footer %}{% endblock %}
+<main class="container">
+	<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
+	<table class="table table-hover">
+		<tbody>
+			{% for event in events %}
+				<tr>
+					<th>Nom</th>
+					<th>Date</th>
+					<th>Lieu</th>
+				</tr>
+				<tr>
+					<td>{{ event.name }}</td>
+					<td>{{ event.date }}</td>
+					<td>{{ event.address }}</td>
+				</tr>
+			</th>
+			<td>
+				<button class="btn my-1">
+					<a class="text-decoration-none" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a>
+				</button>
+				<button class="btn my-1">
+					<a class="text-decoration-none" href="/admin/evenements/show?id={{ event.id }}">Supprimer</a>
+				</button>
+			</td>
+		</tbody>
+	</th>
+</th></tr>{% endfor %}</tbody></table></main>{% endblock %}{% block footer %}{% endblock %}
