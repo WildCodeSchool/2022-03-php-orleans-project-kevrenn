@@ -19,6 +19,7 @@
     --title-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
     --text-size: 1.2rem;
+    --text-size2: calc(var(--text-size)*3);
 }
 
 body {
