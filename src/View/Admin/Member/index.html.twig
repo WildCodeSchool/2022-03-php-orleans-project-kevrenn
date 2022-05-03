@@ -23,9 +23,9 @@
 														{{ 'portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}" width="100px" height="100px">
 					<div class="d-flex flex-column justify-content-center">
 						<a class="text-decoration-none btn my-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
-						<form action="/admin/membres/supprimer" method="POST">
+						<form action="/admin/membres/supprimer" method="POST" onSubmit="return confirm('Etes-vous sûr de vouloir supprimer ce membre ?')">
 							<input type="hidden" name="id" value="{{ member.id }}">
-							<button class="btn my-1">Supprimer</button>
+							<button class="btn my-1" onSubmit="confirm('Etes-vous sûr de vouloir supprimer ce membre ?')">Supprimer</button>
 						</form>
 					</div>
 				</div>
