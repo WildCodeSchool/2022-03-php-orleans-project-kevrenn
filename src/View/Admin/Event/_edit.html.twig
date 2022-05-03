@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/eventmember.css">
+{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+	<main>
+		<h1 class="m-5 text-center">Modifier un evenement</h1>
+		{% include '/Admin/Event/_form.html.twig' %}
+		<div class="mw-100 text-center">
+			<a class="text-decoration-none" href="/admin/evenements/">Retour à la liste des evenements</a>
+		</div>
+	</main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
