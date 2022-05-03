@@ -32,6 +32,14 @@ class AdminMemberController extends AbstractController
         }
     }
 
+    private function validate($member): void
+    {
+        $this->isEmpty('Nom', $member['name']);
+        $this->isEmpty('Statut', $member['status']);
+        $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
+        $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+    }
+
     public function edit(int $id): ?string
     {
         $memberManager = new MemberManager();
@@ -40,10 +48,7 @@ class AdminMemberController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $member = array_map('trim', $_POST);
 
-            $this->isEmpty('Nom', $member['name']);
-            $this->isEmpty('Statut', $member['status']);
-            $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
-            $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+            $this->validate($member);
 
             if (empty($this->errors)) {
                 $memberManager->update($member);
@@ -55,11 +60,6 @@ class AdminMemberController extends AbstractController
             'member' => $member,
             'errors' => $this->getErrors(),
         ]);
-    }
-
-    public function getErrors(): array
-    {
-        return $this->errors;
     }
 
     public function add(): ?string
@@ -84,5 +84,10 @@ class AdminMemberController extends AbstractController
             'member' => $member,
             'errors' => $this->getErrors(),
         ]);
+    }
+
+    public function getErrors(): array
+    {
+        return $this->errors;
     }
 }
