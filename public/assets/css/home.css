@@ -24,14 +24,14 @@ h2::after {
     top: 30px
 }
 
-.members>h2::after {
+.members>h2::after, .partners>h2::after {
     content: url('/assets/images/dentelle-droite-blanche.png');
     position: relative;
     right: 50px;
     top: 30px
 }
 
-.members>h2::before {
+.members>h2::before, .partners>h2::before {
     content: url('/assets/images/dentelle-gauche-blanche.png');
     position: relative;
     left: 50px;
