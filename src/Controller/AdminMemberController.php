@@ -61,4 +61,28 @@ class AdminMemberController extends AbstractController
     {
         return $this->errors;
     }
+
+    public function add(): ?string
+    {
+        $member = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $member = array_map('trim', $_POST);
+
+            $this->isEmpty('Nom', $member['name']);
+            $this->isEmpty('Statut', $member['status']);
+            $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
+            $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+
+            if (empty($this->errors)) {
+                $memberManager = new MemberManager();
+                $memberManager->insert($member);
+                header('Location: /admin/membres');
+            }
+        }
+
+        return $this->twig->render('Admin/Member/add.html.twig', [
+            'member' => $member,
+            'errors' => $this->getErrors(),
+        ]);
+    }
 }
