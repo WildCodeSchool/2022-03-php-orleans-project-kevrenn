@@ -13,17 +13,20 @@
 			{% for member in members %}
 				<div class="card col-lg-3 m-2 d-flex flex-row justify-content-between">
 					<div class="d-flex flex-column justify-content-center col-4 mt-2">
-						<p class="fs-5" >{{ member.name }}</p>
+						<p class="fs-5">{{ member.name }}</p>
 						<p class="fs-6">{{ member.status }}</p>
 					</div>
-					<img class="m-2" src="/assets/images/
-							{% if member.photo_link %}
-								{{ member.photo_link }}
-							{% else %}
-								{{ 'portrait-placeholder.png' }}" 
-							{% endif %} alt="{{ member.name }}" width="100px" height="100px">
+					<img class="m-2 align-self-center" src="/assets/images/
+													{% if member.photo_link %}
+														{{ member.photo_link }}
+													{% else %}
+														{{ 'portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}" width="100px" height="100px">
 					<div class="d-flex flex-column justify-content-center">
 						<a class="text-decoration-none btn my-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
+						<form action="/admin/membres/supprimer" method="POST">
+							<input type="hidden" name="id" value="{{ member.id }}">
+							<button class="btn my-1">Supprimer</button>
+						</form>
 					</div>
 				</div>
 			{% endfor %}
