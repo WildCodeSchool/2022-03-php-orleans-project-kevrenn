@@ -12,8 +12,7 @@
 :root {
     --bs-primary-rgb: 0, 92, 103;
     --bs-primary: rgb(var(--bs-primary-rgb));
-    --bs-secondary-rgb: 71, 138, 120;
-    --bs-secondary: rgb(var(--bs-secondary-rgb));
+    --bs-secondary: #478A78;
     --bs-primary-light: #8EBEC8;
     --bs-dark: #0D363F;
     --bs-light: #EAEDEC;

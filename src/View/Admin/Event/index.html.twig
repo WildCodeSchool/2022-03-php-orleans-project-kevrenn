@@ -1,4 +1,4 @@
-{% extends 'layout.html.twig' %}
+{% extends 'layout_admin.html.twig' %}
 {% block stylesheet %}
 	<link rel="stylesheet" href="/assets/css/adminevents.css">
 {% endblock %}
@@ -7,8 +7,8 @@
 	<main class="container">
 		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
 		<table class="table table-hover">
-			<tbody>
-				{% for event in events %}
+			{% for event in events %}
+				<tbody>
 					<tr>
 						<th>Nom</th>
 						<th>Date</th>
@@ -20,10 +20,18 @@
 						<td>{{ event.address }}</td>
 					</tr>
 					<tr>
-					<th><a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></th>
+						<th>
+							<a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a>
+						</th>
 					</tr>
-				{% endfor %}
-			</tbody>
+					<th>
+						<form action="/admin/evenements/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet événement ?')">
+							<input type="hidden" name="id" value="{{ event.id }}">
+							<button class="btn my-1">Supprimer</button>
+						</form>
+					</th>
+				</tbody>
+			{% endfor %}
 		</table>
 	</main>
 {% endblock %}
