@@ -17,6 +17,7 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'evenements' => ['EventController', 'index'],
     'evenement' => ['EventController','show', ['id']],
+    'admin/evenements/edit' => ['AdminEventController', 'edit', ['id']],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
     'admin/membres' => ['AdminMemberController', 'index'],
     'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],
