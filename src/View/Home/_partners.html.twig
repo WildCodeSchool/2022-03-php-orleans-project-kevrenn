@@ -4,7 +4,7 @@
 
 	<div class="d-flex justify-content-around align-items-center mt-5">
 		{% for partner in partners %}
-				<a href="{{ partner.url }}">
+				<a href="{{ partner.url }}" class="logoPartner">
 					<img src="/assets/images/{{ partner.logo_link }}" alt="{{ partner.name }}">
 				</a>
 		{% endfor %}
