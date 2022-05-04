@@ -6,8 +6,12 @@
 {% block content %}
 	<main class="container">
 		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
+		<div class="row container-fluid ">
+			<a class="text-decoration-none btn my-1" href="/admin/evenements/ajouter">Ajouter</a>
+		</div>
 		<table class="table table-hover">
 			<tbody>
+			
 				{% for event in events %}
 					<tr>
 						<th>{{ event.name }}</th>
