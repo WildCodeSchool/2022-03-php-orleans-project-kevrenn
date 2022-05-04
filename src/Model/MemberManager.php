@@ -15,4 +15,14 @@ class MemberManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function insert(array $member): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " (`name`, `status`) VALUES (:name, :status)");
+        $statement->bindValue('name', $member['name'], \PDO::PARAM_STR);
+        $statement->bindValue('status', $member['status'], \PDO::PARAM_STR);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }

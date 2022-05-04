@@ -1,0 +1,19 @@
+
+.btn{
+    color: var(--bs-primary);
+    background-color: var(--bs-light);
+    font-size: var(--text-size);
+}
+
+.btn:hover, button:hover, a:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
+
+button {
+    color: var(--bs-primary);
+}
+
+a {
+    color: var(--bs-primary);
+}
