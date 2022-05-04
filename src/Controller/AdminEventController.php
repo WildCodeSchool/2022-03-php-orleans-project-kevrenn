@@ -6,7 +6,6 @@ use App\Model\EventManager;
 
 class AdminEventController extends AbstractController
 {
-
     public function edit(int $id): ?string
     {
         $eventManager = new EventManager();
