@@ -19,6 +19,13 @@
 						<td>{{ event.date }}</td>
 						<td>{{ event.address }}</td>
 					</tr>
+					<tr>
+						<th><a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></button></th>
+						<th><form action="/admin/evenements/supprimer" method="POST" onSubmit="return confirm('Etes-vous sûr de vouloir supprimer ce événement ?')">
+							<input type="hidden" name="id" value="{{ event.id }}">
+							<button class="btn my-1" onSubmit="confirm('Etes-vous sûr de vouloir supprimer ce événement ?')">Supprimer</button>
+						</form></button></th>
+					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
