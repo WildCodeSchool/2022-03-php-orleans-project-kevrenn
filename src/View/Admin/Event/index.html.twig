@@ -4,33 +4,35 @@
 {% endblock %}
 {% block header %}{% endblock %}
 {% block content %}
-<main class="container">
-	<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
-	<table class="table table-hover">
-		<tbody>
+	<main class="container">
+		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
+		<table class="table table-hover">
 			{% for event in events %}
-				<tr>
-					<th>Nom</th>
-					<th>Date</th>
-					<th>Lieu</th>
-				</tr>
-				<tr>
-					<td>{{ event.name }}</td>
-					<td>{{ event.date }}</td>
-					<td>{{ event.address }}</td>
-				</tr>
-				<tr>
+				<tbody>
+					<tr>
+						<th>Nom</th>
+						<th>Date</th>
+						<th>Lieu</th>
+					</tr>
+					<tr>
+						<td>{{ event.name }}</td>
+						<td>{{ event.date }}</td>
+						<td>{{ event.address }}</td>
+					</tr>
+					<tr>
+						<th>
+							<a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a>
+						</th>
+					</tr>
 					<th>
-						<a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a>
+						<form action="/admin/evenements/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet événement ?')">
+							<input type="hidden" name="id" value="{{ event.id }}">
+							<button class="btn my-1">Supprimer</button>
+						</form>
 					</th>
-				</tr>
-				<th>
-					<form action="/admin/evenements/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet événement ?')">
-						<input type="hidden" name="id" value="{{ event.id }}">
-						<button class="btn my-1">Supprimer</button>
-					</form>
-				</th>
-			</tbody>
-		</tbody>
-	</th>
-</tr>{% endfor %}</tbody></table></main>{% endblock %}{% block footer %}{% endblock %}
+				</tbody>
+			{% endfor %}
+		</table>
+	</main>
+{% endblock %}
+{% block footer %}{% endblock %}
