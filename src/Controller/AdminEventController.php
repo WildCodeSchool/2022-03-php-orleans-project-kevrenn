@@ -60,7 +60,6 @@ class AdminEventController extends AbstractController
                 $eventManager->update($event);
                 header('Location: /admin/evenements/');
             }
-            
         }
 
         return $this->twig->render('Admin/Event/_edit.html.twig', [
