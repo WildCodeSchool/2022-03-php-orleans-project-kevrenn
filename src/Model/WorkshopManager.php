@@ -18,4 +18,17 @@ class WorkshopManager extends AbstractManager
 
         return $statement->execute();
     }
+
+    public function insert(array $workshop): int
+    {
+        $statement = $this->pdo->prepare("INSERT INTO " . self::TABLE . " 
+        (`name`, `description`, `address`, `date` ) VALUES (:name, :description, :address, :date)");
+        $statement->bindValue('name', $workshop['name'], \PDO::PARAM_STR);
+        $statement->bindValue('description', $workshop['description'], \PDO::PARAM_STR);
+        $statement->bindValue('address', $workshop['address'], \PDO::PARAM_STR);
+        $statement->bindValue('date', $workshop['date']);
+
+        $statement->execute();
+        return (int)$this->pdo->lastInsertId();
+    }
 }
