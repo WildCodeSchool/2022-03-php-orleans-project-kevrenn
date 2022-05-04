@@ -1,21 +1,27 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/adminmember.css">
 {% endblock %}
 
-{% block header %}{% endblock %}
+{% block header %}
+	{% include "/Includes/_navbar_admin.html.twig" %}
+{% endblock %}
 
 {% block content %}
 	<main>
 		<h1 class="m-5 text-center">Admin partenaires</h1>
 		<div class="row container-fluid d-flex justify-content-center m-auto">
+			<a class="text-decoration-none btn col-lg-1 col-md-3 justify-self-center" href="/admin/partenaires/ajouter">Ajouter</a>
+		</div>
+		<div class="row container-fluid d-flex justify-content-center m-auto">
 			{% for partner in partners %}
 				<div class="card col-lg-3 m-2 d-flex flex-row justify-content-between">
 					<div class="d-flex flex-column justify-content-center col-8 mt-2">
-						<p class="fs-5" >{{ partner.name }}</p>
+						<p class="fs-5">{{ partner.name }}</p>
 						<p class="fs-6">{{ partner.url }}</p>
 					</div>
-					<img class="m-2 align-self-center" src="/assets/images/{{ partner.logo_link }} alt="{{ partner.name }} width="50%" height="50%">
+					<img class="m-2 align-self-center" src="/assets/images/{{ partner.logo_link }} alt=" {{ partner.name }} width="50%" height="50%">
 				</div>
 			{% endfor %}
 		</div>
