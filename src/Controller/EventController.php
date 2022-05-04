@@ -6,7 +6,7 @@ use App\Model\EventManager;
 
 class EventController extends AbstractController
 {
-    public function index()
+    public function index(): string
     {
         $eventManager = new EventManager();
         $events = $eventManager->selectAll('date', 'DESC');
