@@ -8,6 +8,12 @@ class AdminEventController extends AbstractController
 {
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
+
         $eventManager = new EventManager();
         $events = $eventManager->selectAll('date', 'DESC');
 
