@@ -16,9 +16,12 @@ return [
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
     'evenements' => ['EventController', 'index'],
+    'admin/evenements' => ['AdminEventController', 'index',],
     'evenement' => ['EventController','show', ['id']],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
+    'login' => ['LoginController', 'login'],
     'admin/membres' => ['AdminMemberController', 'index'],
     'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],
+    'admin/membres/ajouter' => ['AdminMemberController', 'add',],
     'admin/membres/supprimer' => ['AdminMemberController', 'delete', ['id']],
 ];

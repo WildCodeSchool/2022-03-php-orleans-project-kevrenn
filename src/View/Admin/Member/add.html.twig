@@ -1,12 +1,14 @@
-{% extends 'layout_admin.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
 	<link rel="stylesheet" href="/assets/css/adminmember.css">
 {% endblock %}
 
+{% block header %}{% endblock %}
+
 {% block content %}
 	<main>
-		<h1 class="m-5 text-center">Modifier un membre</h1>
+		<h1 class="m-5 text-center">Ajouter un membre</h1>
 		{% include '/Admin/Member/_form.html.twig' %}
 		<div class="mw-100 text-center">
 			<a class="text-decoration-none btn my-1" href="/admin/membres/">Retour à la liste des membres</a>

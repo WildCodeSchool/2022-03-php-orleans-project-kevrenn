@@ -32,11 +32,39 @@ class AdminMemberController extends AbstractController
         }
     }
 
+    private function validate($member): void
+    {
+        $this->isEmpty('Nom', $member['name']);
+        $this->isEmpty('Statut', $member['status']);
+        $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
+        $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+    }
+
     public function edit(int $id): ?string
     {
         $memberManager = new MemberManager();
         $member = $memberManager->selectOneById($id);
 
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $member = array_map('trim', $_POST);
+
+            $this->validate($member);
+
+            if (empty($this->errors)) {
+                $memberManager->update($member);
+                header('Location: /admin/membres');
+            }
+        }
+
+        return $this->twig->render('Admin/Member/edit.html.twig', [
+            'member' => $member,
+            'errors' => $this->getErrors(),
+        ]);
+    }
+
+    public function add(): ?string
+    {
+        $member = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $member = array_map('trim', $_POST);
 
@@ -46,12 +74,13 @@ class AdminMemberController extends AbstractController
             $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
 
             if (empty($this->errors)) {
-                $memberManager->update($member);
+                $memberManager = new MemberManager();
+                $memberManager->insert($member);
                 header('Location: /admin/membres');
             }
         }
 
-        return $this->twig->render('Admin/Member/edit.html.twig', [
+        return $this->twig->render('Admin/Member/add.html.twig', [
             'member' => $member,
             'errors' => $this->getErrors(),
         ]);
