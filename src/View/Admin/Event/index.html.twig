@@ -19,6 +19,10 @@
 						<td>{{ event.date }}</td>
 						<td>{{ event.address }}</td>
 					</tr>
+					<tr>
+					<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></button></th>
+						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/show?id={{ event.id }}">Supprimer</a></button></th>
+					</tr>
 				{% endfor %}
 			</tbody>
 		</table>
