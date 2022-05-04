@@ -40,6 +40,7 @@ h2::after {
 
 .logoPartner {
     filter: grayscale(1);
+    transition: filter 0.5s;
 }
 
 .logoPartner:hover {
