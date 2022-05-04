@@ -21,7 +21,7 @@ class EventManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
-    
+
     public function update(array $event): bool
     {
         $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
