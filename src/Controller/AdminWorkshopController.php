@@ -6,7 +6,6 @@ use App\Model\WorkshopManager;
 
 class AdminWorkshopController extends AbstractController
 {
-
     public const NAME_LENGTH = 255;
     public const ADRESS_LENGTH = 255;
     public array $errors = [];
@@ -39,7 +38,7 @@ class AdminWorkshopController extends AbstractController
         $this->isEmpty('Nom', $workshop['name']);
         $this->isEmpty('Adresse', $workshop['address']);
         $this->isTooLong('Nom', $workshop['name'], self::NAME_LENGTH);
-        $this->isTooLong('Adresse', $workshop['address'], self:: ADRESS_LENGTH);
+        $this->isTooLong('Adresse', $workshop['address'], self::ADRESS_LENGTH);
     }
 
     public function edit(int $id): ?string
