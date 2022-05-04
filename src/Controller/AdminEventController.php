@@ -32,7 +32,7 @@ class AdminEventController extends AbstractController
 
             // if validation is ok, insert and redirection
             $eventManager = new EventManager();
-            $name = $eventManager->insert($event);
+            $eventManager->insert($event);
 
             header('Location: /admin/evenements/');
             return null;
