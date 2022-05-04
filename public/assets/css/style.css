@@ -20,6 +20,7 @@
     --title-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
 
+
     --text-size: 1.25rem;
     --title-sizeh1:calc(var(--text-size) * 3); 
     --title-sizeh2:calc(var(--text-size) * 2); 
