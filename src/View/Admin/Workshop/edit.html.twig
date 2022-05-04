@@ -1,0 +1,17 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/adminworkshop.css">
+{% endblock %}
+
+{% block content %}
+	<main>
+		<h1 class="m-5 text-center">Modifier un atelier</h1>
+		{% include '/Admin/Workshop/_form.html.twig' %}
+		<div class="mw-100 text-center">
+			<a class="text-decoration-none btn my-1" href="/admin/atelier/">Retour à la liste des ateliers</a>
+		</div>
+	</main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
