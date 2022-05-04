@@ -68,4 +68,25 @@ class AdminWorkshopController extends AbstractController
     {
         return $this->errors;
     }
+
+    public function add(): ?string
+    {
+        $workshop = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $workshop = array_map('trim', $_POST);
+
+            $this->validate($workshop);
+
+            if (empty($this->errors)) {
+                $workshopManager = new WorkshopManager();
+                $workshopManager->insert($workshop);
+                header('Location: /admin/atelier');
+            }
+        }
+
+        return $this->twig->render('Admin/Workshop/add.html.twig', [
+            'workshop' => $workshop,
+            'errors' => $this->getErrors(),
+        ]);
+    }
 }
