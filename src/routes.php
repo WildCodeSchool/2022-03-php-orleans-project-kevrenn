@@ -23,4 +23,5 @@ return [
     'admin/membres' => ['AdminMemberController', 'index'],
     'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],
     'admin/membres/ajouter' => ['AdminMemberController', 'add',],
+    'admin/membres/supprimer' => ['AdminMemberController', 'delete', ['id']],
 ];
