@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\MemberManager;
+use App\Model\PartnerManager;
 
 class HomeController extends AbstractController
 {
@@ -11,6 +12,13 @@ class HomeController extends AbstractController
         $memberManager = new MemberManager();
         $members = $memberManager->selectAll();
 
-        return $this->twig->render('Home/index.html.twig', ['members' => $members]);
+        $partnerManager = new PartnerManager();
+        $partners = $partnerManager->selectAll('name');
+
+        return $this->twig->render(
+            'Home/index.html.twig',
+            ['members' => $members,
+            'partners' => $partners]
+        );
     }
 }
