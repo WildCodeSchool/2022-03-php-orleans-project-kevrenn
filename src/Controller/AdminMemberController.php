@@ -32,6 +32,14 @@ class AdminMemberController extends AbstractController
         }
     }
 
+    private function validate($member): void
+    {
+        $this->isEmpty('Nom', $member['name']);
+        $this->isEmpty('Statut', $member['status']);
+        $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
+        $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+    }
+
     public function edit(int $id): ?string
     {
         $memberManager = new MemberManager();
@@ -40,10 +48,7 @@ class AdminMemberController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $member = array_map('trim', $_POST);
 
-            $this->isEmpty('Nom', $member['name']);
-            $this->isEmpty('Statut', $member['status']);
-            $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
-            $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+            $this->validate($member);
 
             if (empty($this->errors)) {
                 $memberManager->update($member);
@@ -57,8 +62,43 @@ class AdminMemberController extends AbstractController
         ]);
     }
 
+    public function add(): ?string
+    {
+        $member = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $member = array_map('trim', $_POST);
+
+            $this->isEmpty('Nom', $member['name']);
+            $this->isEmpty('Statut', $member['status']);
+            $this->isTooLong('Nom', $member['name'], self::NAME_LENGTH);
+            $this->isTooLong('Statut', $member['status'], self::STATUS_LENGTH);
+
+            if (empty($this->errors)) {
+                $memberManager = new MemberManager();
+                $memberManager->insert($member);
+                header('Location: /admin/membres');
+            }
+        }
+
+        return $this->twig->render('Admin/Member/add.html.twig', [
+            'member' => $member,
+            'errors' => $this->getErrors(),
+        ]);
+    }
+
     public function getErrors(): array
     {
         return $this->errors;
+    }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $memberManager = new MemberManager();
+            $memberManager->delete((int)$id);
+
+            header('Location:/admin/membres');
+        }
     }
 }
