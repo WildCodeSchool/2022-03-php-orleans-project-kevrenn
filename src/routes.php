@@ -21,6 +21,7 @@ return [
     'admin/evenements/edit' => ['AdminEventController', 'edit', ['id']],
     'admin/evenements/show' => ['AdminEventController', 'show', ['id']],
     'admin/evenements/supprimer' => ['AdminEventController', 'delete', ['id']],
+    'admin/evenements/ajouter' => ['AdminEventController', 'add',],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
     'admin/membres' => ['AdminMemberController', 'index'],
     'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],

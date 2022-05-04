@@ -32,13 +32,13 @@ class AdminEventController extends AbstractController
 
             // if validation is ok, insert and redirection
             $eventManager = new EventManager();
-            $id = $eventManager->insert($event);
+            $name = $eventManager->insert($event);
 
-            header('Location:/evenements/show?id=' . $id);
+            header('Location: /admin/evenements/');
             return null;
         }
 
-        return $this->twig->render('Item/add.html.twig');
+        return $this->twig->render('Admin/Event/add.html.twig');
     }
 
     public function edit(int $id): ?string
