@@ -18,6 +18,7 @@ return [
     'evenements' => ['EventController', 'index'],
     'evenement' => ['EventController','show', ['id']],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
+    'admin/atelier/modifier' => ['AdminWorkshopController', 'edit', ['id']],
     'admin/membres' => ['AdminMemberController', 'index'],
     'admin/membres/modifier' => ['AdminMemberController', 'edit', ['id']],
     'admin/membres/ajouter' => ['AdminMemberController', 'add',],
