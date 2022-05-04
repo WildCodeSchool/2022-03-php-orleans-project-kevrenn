@@ -10,18 +10,7 @@
 		<h1 class="m-5">Ateliers</h1>
 		<div class="row ">
 			{% for workshop in workshops %}
-				<div class="col-lg-4 col-md-12 p-5">
-					<figure class="card">
-						<h2 class="p-3">{{ workshop.name }}</h2>
-						<img src="assets/images/placehorderworkshop.jpg" class="card-img-top" alt="">
-						<figcaption class="card-body d-flex align-items-center">
-							<p class="card-text  p-3">
-								{{ workshop.description }}
-							</p>
-						</figcaption>
-						<a href="/atelier?id={{workshop.id}}" class="btn w-50 m-auto mb-5">Inscription</a>
-					</figure>
-				</div>
+				{% include "Includes/_card_workshop.html.twig" %}
 			{% endfor %}
 		</div>
 	</main>
