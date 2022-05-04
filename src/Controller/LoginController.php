@@ -25,7 +25,6 @@ class LoginController extends AbstractController
                 $userManager = new UserManager();
                 $user = $userManager->selectOneByEmail($cresdentials['email']);
                 if ($user) {
-                    var_dump($cresdentials['password'], $user['password']);
                     if (password_verify($cresdentials['password'], $user['password'])) {
                         $_SESSION['user'] = $user['id'];
                         header('Location: admin/membres');
