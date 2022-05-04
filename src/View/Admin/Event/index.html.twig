@@ -11,7 +11,7 @@
 				{% for event in events %}
 					<tr>
 						<th>{{ event.name }}</th>
-						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></button></th>
+						<th><a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></button></th>
 						<th>
 							<form action="/admin/evenements/supprimer" method="POST" onSubmit="return confirm('Etes-vous sûr de vouloir supprimer ce événement ?')">
 							<input type="hidden" name="id" value="{{ event.id }}">
