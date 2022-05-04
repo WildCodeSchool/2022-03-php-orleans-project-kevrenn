@@ -13,6 +13,11 @@ class AdminWorkshopController extends AbstractController
 
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $workshopManager = new WorkshopManager();
         $workshops = $workshopManager->selectAll();
 
@@ -37,12 +42,21 @@ class AdminWorkshopController extends AbstractController
     {
         $this->isEmpty('Nom', $workshop['name']);
         $this->isEmpty('Adresse', $workshop['address']);
+        $this->isEmpty('Description', $workshop['description']);
+        $this->isEmpty('Date', $workshop['date']);
         $this->isTooLong('Nom', $workshop['name'], self::NAME_LENGTH);
         $this->isTooLong('Adresse', $workshop['address'], self::ADRESS_LENGTH);
     }
 
     public function edit(int $id): ?string
     {
+
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
+
         $workshopManager = new WorkshopManager();
         $workshop = $workshopManager->selectOneById($id);
 
