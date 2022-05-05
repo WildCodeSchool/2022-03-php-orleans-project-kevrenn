@@ -71,9 +71,19 @@ class AdminPartnerController extends AbstractController
         $this->isTooLong('Lien du logo', $partner['logo_link'], self::BDD_LENGTH);
     }
 
-
     public function getErrors(): array
     {
         return $this->errors;
+    }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $partnerManager = new PartnerManager();
+            $partnerManager->delete((int)$id);
+
+            header('Location:/admin/partenaires');
+        }
     }
 }

@@ -31,5 +31,6 @@ return [
     'admin/membres/ajouter' => ['AdminMemberController', 'add',],
     'admin/membres/supprimer' => ['AdminMemberController', 'delete', ['id']],
     'admin/partenaires' => ['AdminPartnerController', 'index'],
-    'admin/partenaires/ajouter' => ['AdminPartnerController', 'add']
+    'admin/partenaires/ajouter' => ['AdminPartnerController', 'add'],
+    'admin/partenaires/supprimer' => ['AdminPartnerController', 'delete', ['id']],
 ];
