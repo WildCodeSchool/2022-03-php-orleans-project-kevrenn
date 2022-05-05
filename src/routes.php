@@ -17,7 +17,6 @@ return [
     'items/delete' => ['ItemController', 'delete',],
     'contact' => ['ContactController', 'index'],
     'evenements' => ['EventController', 'index'],
-    'admin/evenements' => ['AdminEventController', 'index',],
     'evenement' => ['EventController','show', ['id']],
     'admin/evenements' => ['AdminEventController', 'index',],
     'admin/evenements/edit' => ['AdminEventController', 'edit', ['id']],
