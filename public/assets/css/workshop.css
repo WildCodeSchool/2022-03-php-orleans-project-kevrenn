@@ -1,6 +1,7 @@
 h1{
     display: flex;
     justify-content: center;
+    font-size: var(--title-sizeh1)
 }
 
 h2{
@@ -9,9 +10,28 @@ h2{
     justify-content: center;
 }
 
+h3 {
+    color: var(--bs-light);
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-size: var(--title-sizeh3)
+}
+
+.border-secondary {
+    margin-bottom: 5rem;
+}
+
 .card{
     background-color: var(--bs-primary);
     color: var(--bs-light);
+}
+
+p {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
 }
 
 figcaption{
@@ -21,6 +41,7 @@ figcaption{
 .btn{
     color: var(--bs-dark);
     background-color: var(--bs-light);
+    font-size: var(--text-size);
 }
 
 .btn:hover{

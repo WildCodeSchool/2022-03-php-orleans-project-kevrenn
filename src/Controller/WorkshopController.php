@@ -13,4 +13,12 @@ class WorkshopController extends AbstractController
 
         return $this->twig->render('Workshop/index.html.twig', ['workshops' => $workshops,]);
     }
+
+    public function show(int $id): string
+    {
+        $workshopManager = new WorkshopManager();
+        $workshop = $workshopManager->selectOneById($id);
+
+        return $this->twig->render('Workshop/description.html.twig', ['workshop' => $workshop]);
+    }
 }

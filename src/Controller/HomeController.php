@@ -2,13 +2,23 @@
 
 namespace App\Controller;
 
+use App\Model\MemberManager;
+use App\Model\PartnerManager;
+
 class HomeController extends AbstractController
 {
-    /**
-     * Display home page
-     */
     public function index(): string
     {
-        return $this->twig->render('Home/index.html.twig');
+        $memberManager = new MemberManager();
+        $members = $memberManager->selectAll();
+
+        $partnerManager = new PartnerManager();
+        $partners = $partnerManager->selectAll('name');
+
+        return $this->twig->render(
+            'Home/index.html.twig',
+            ['members' => $members,
+            'partners' => $partners]
+        );
     }
 }
