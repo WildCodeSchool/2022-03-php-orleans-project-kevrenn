@@ -7,15 +7,31 @@
 	<main class="container">
 		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
 		<table class="table table-hover">
-			<tbody>
-				{% for event in events %}
+			{% for event in events %}
+				<tbody>
 					<tr>
-						<th>{{ event.name }}</th>
-						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a></button></th>
-						<th><button class="btn my-1"><a class="text-decoration-none" href="/admin/evenements/show?id={{ event.id }}">Supprimer</a></button></th>
+						<th>Nom</th>
+						<th>Date</th>
+						<th>Lieu</th>
 					</tr>
-				{% endfor %}
-			</tbody>
+					<tr>
+						<td>{{ event.name }}</td>
+						<td>{{ event.date }}</td>
+						<td>{{ event.address }}</td>
+					</tr>
+					<tr>
+						<th>
+							<a class="text-decoration-none btn my-1" href="/admin/evenements/edit?id={{ event.id }}">Modifier</a>
+						</th>
+					</tr>
+					<th>
+						<form action="/admin/evenements/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet événement ?')">
+							<input type="hidden" name="id" value="{{ event.id }}">
+							<button class="btn my-1">Supprimer</button>
+						</form>
+					</th>
+				</tbody>
+			{% endfor %}
 		</table>
 	</main>
 {% endblock %}
