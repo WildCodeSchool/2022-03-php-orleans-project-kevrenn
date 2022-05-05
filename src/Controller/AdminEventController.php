@@ -36,7 +36,7 @@ class AdminEventController extends AbstractController
         $this->isTooLong('Adresse', $event['address'], self::ADRESS_LENGTH);
         $this->isTooLong('Image', $event['image_link'], self::IMAGE_LINK_LENGTH);
     }
-    
+
     public function index(): string
     {
         $eventManager = new EventManager();
@@ -61,16 +61,21 @@ class AdminEventController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = array_map('trim', $_POST);
 
-            // TODO validations (length, format...)
-            $eventManager->update($event);
+            $this->validate($event);
+            if (empty($this->errors)) {
+                $eventManager->update($event);
 
-            header('Location: /admin/evenements/');
-
-            return null;
+                header('Location: /admin/evenements/');
+            }
         }
 
-        return $this->twig->render('Admin/Event/_edit.html.twig', [
+        return $this->twig->render('Admin/Event/edit.html.twig', [
             'event' => $event,
+            'errors' => $this->getErrors(),
         ]);
+    }
+    public function getErrors(): array
+    {
+        return $this->errors;
     }
 }
