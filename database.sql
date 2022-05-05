@@ -40,7 +40,7 @@ VALUES ('Titouan Kervadec', 'Président', ''),
 CREATE TABLE IF NOT EXISTS `workshop` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(155) NOT NULL,
-  `date` DATETIME NOT NULL,
+  `date` VARCHAR(255) NOT NULL,
   `address` VARCHAR(255) NOT NULL,
   `description` TEXT NULL);
    
