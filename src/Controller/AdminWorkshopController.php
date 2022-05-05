@@ -103,4 +103,15 @@ class AdminWorkshopController extends AbstractController
             'errors' => $this->getErrors(),
         ]);
     }
+
+    public function delete(): void
+    {
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $id = trim($_POST['id']);
+            $workshopManager = new WorkshopManager();
+            $workshopManager->delete((int)$id);
+
+            header('Location:/admin/atelier');
+        }
+    }
 }

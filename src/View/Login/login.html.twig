@@ -1,8 +1,12 @@
 {% extends 'layout.html.twig' %}
 
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/style.css">
+{% endblock %}
+
 {% block content %}
 <main class="container">
-	<h1>Login</h1>
+	<h1 class="lacetitle d-flex justify-content-center align-items-center m-5">Login</h1>
 	{% if errors is not empty %}
 	<div class="d-flex flex-column align-items-center col-4 mt-2  w-100">
 		<ul>

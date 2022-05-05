@@ -40,6 +40,18 @@ h1, h2, h3 {
     color: var(--bs-dark);
 }
 
+.lacetitle::before {
+    content: url('/assets/images/dentelle-gauche.png');
+    left: 50px;
+    top: 30px
+}
+
+.lacetitle::after {
+    content: url('/assets/images/dentelle-droite.png');
+    right: 50px;
+    top: 30px
+}
+
 button{
     font-size: var(--text-size);
 }
