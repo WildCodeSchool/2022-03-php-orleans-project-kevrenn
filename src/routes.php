@@ -20,7 +20,6 @@ return [
     'evenement' => ['EventController','show', ['id']],
     'admin/evenements' => ['AdminEventController', 'index',],
     'admin/evenements/edit' => ['AdminEventController', 'edit', ['id']],
-    'admin/evenements/show' => ['AdminEventController', 'show', ['id']],
     'admin/evenements/supprimer' => ['AdminEventController', 'delete', ['id']],
     'admin/atelier' => ['AdminWorkshopController', 'index'],
     'admin/atelier/modifier' => ['AdminWorkshopController', 'edit', ['id']],
