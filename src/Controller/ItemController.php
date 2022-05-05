@@ -34,8 +34,7 @@ class ItemController extends AbstractController
     public function edit(int $id): ?string
     {
         $itemManager = new ItemManager();
-        $item = $itemManager->selectOneById(
-        }$id);
+        $item = $itemManager->selectOneById($id);
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
