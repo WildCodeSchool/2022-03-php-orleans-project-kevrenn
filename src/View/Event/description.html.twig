@@ -3,15 +3,23 @@
 	<link rel="stylesheet" href="/assets/css/description.css">
 {% endblock %}
 {% block content %}
-<main class="container vh-100 ">
 	<body>
-	<h1 class="m-5">{{event.name}}</h1>
-	
-	<div class="description">
-	
-			<h2>Description</h2>
-			<p> {{event.description}}</p>
-	</div>
+		<h1 class="m-5">{{event.name}}</h1>
+		<main class="container d-flex vh-100 ">
+			<div class="info">
+				<h2>Date</h2>
+				<p>
+					{{event.date}}</p>
+				<h2>Adresse</h2>
+				<p>
+					{{event.address}}</p>
+			</div>
+
+			<div class="description ms-5">
+				<h2>Description</h2>
+				<p>
+					{{event.description}}</p>
+			</div>
+		</main>
 	</body>
-	</main>
 {% endblock %}
