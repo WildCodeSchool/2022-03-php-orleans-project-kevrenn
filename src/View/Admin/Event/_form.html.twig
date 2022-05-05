@@ -9,17 +9,17 @@
 {% endif %}
 
 <form method="post" class="card d-flex flex-column w-50 m-auto p-2">
-	<input type="hidden" value="{{ event.id }}" name="id">
-	<label for="name">Nom</label>
-	<input type="text" value="{{ event.name }}" name="name" id="name">
-	<label for="name">Date</label>
-	<input type="date" value="{{ event.date }}" name="date" id="date">
-	<label for="name">Description</label>
-	<input type="textarea" value="{{ event.description }}" name="description" id="description">
-	<label for="name">Adresse</label>
-	<input type="text" value="{{ event.address }}" name="address" id="address">
-	<label for="name">Image</label>
-	<input type="url" value="{{ event.image_link }}" name="image_link" id="image_link">
+	<input type="hidden" class="form-control" value="{{ event.id }}" name="id">
+	<label for="name"class="form-label">Nom</label>
+	<input type="text"class="form-control" value="{{ event.name }}" name="name" id="name">
+	<label for="name"class="form-label">Date</label>
+	<input type="date"class="form-control" value="{{ event.date }}" name="date" id="date">
+	<label for="name"class="form-label">Description</label>
+	<input type="textarea"class="form-control" value="{{ event.description }}" name="description" id="description">
+	<label for="name"class="form-label">Adresse</label>
+	<input type="text"class="form-control" value="{{ event.address }}" name="address" id="address">
+	<label for="name"class="form-label">Image</label>
+	<input type="url"class="form-control" value="{{ event.image_link }}" name="image_link" id="image_link">
 	<a class="btn btn-primary text-decoration-none my-2 align-self-center">Envoi</a>
 </form>
 {% block footer %}{% endblock %}
