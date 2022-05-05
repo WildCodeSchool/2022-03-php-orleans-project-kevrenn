@@ -6,7 +6,6 @@ use App\Model\EventManager;
 
 class AdminEventController extends AbstractController
 {
-
     public const NAME_LENGTH = 255;
     public const ADRESS_LENGTH = 255;
     public const IMAGE_LINK_LENGTH = 255;
@@ -62,19 +61,6 @@ class AdminEventController extends AbstractController
     public function getErrors(): array
     {
         return $this->errors;
-
-    public function index(): string
-    {
-        if ($this->getUser() === null) {
-            echo 'Pas autorisé';
-            header('HTTP/1.0 403 Forbidden');
-            return '';
-        }
-
-        $eventManager = new EventManager();
-        $events = $eventManager->selectAll('date', 'DESC');
-
-        return $this->twig->render('Admin/Event/index.html.twig', ['events' => $events]);
     }
 
     public function delete(): void
