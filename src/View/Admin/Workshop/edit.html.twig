@@ -8,6 +8,12 @@
 	<main>
 		<h1 class="m-5 text-center">Modifier un atelier</h1>
 		{% include '/Admin/Workshop/_form.html.twig' %}
+		<div class="d-flex flex-column text-center justify-content-center">
+			<form action="/admin/atelier/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet atelier ?')">
+				<input type="hidden" name="id" value="{{ workshop.id }}">
+				<button class="btn my-1">Supprimer</button>
+			</form>
+		</div>
 		<div class="mw-100 text-center">
 			<a class="text-decoration-none btn my-1" href="/admin/atelier/">Retour à la liste des ateliers</a>
 		</div>

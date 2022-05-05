@@ -22,6 +22,7 @@ return [
     'admin/atelier' => ['AdminWorkshopController', 'index'],
     'admin/atelier/modifier' => ['AdminWorkshopController', 'edit', ['id']],
     'admin/atelier/ajouter' => ['AdminWorkshopController', 'add'],
+    'admin/atelier/supprimer' => ['AdminWorkshopController', 'delete', ['id']],
     'login' => ['LoginController', 'login'],
     'logout' => ['LoginController', 'logout'],
     'admin/membres' => ['AdminMemberController', 'index'],
