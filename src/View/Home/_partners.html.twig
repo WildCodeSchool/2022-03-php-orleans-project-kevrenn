@@ -1,0 +1,12 @@
+<section class="partners d-flex flex-column justify-content-center bg-primary">
+
+	<h2 class="card-title mt-4 text-center text-light">Nos partenaires</h2>
+
+	<div class="d-flex justify-content-around align-items-center mt-5">
+		{% for partner in partners %}
+				<a href="{{ partner.url }}" class="logoPartner">
+					<img src="/assets/images/{{ partner.logo_link }}" alt="{{ partner.name }}">
+				</a>
+		{% endfor %}
+	</div>
+</section>

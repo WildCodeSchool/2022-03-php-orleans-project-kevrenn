@@ -8,6 +8,12 @@ class AdminPartnerController extends AbstractController
 {
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
+
         $partnerManager = new PartnerManager();
         $partners = $partnerManager->selectAll('name');
 
