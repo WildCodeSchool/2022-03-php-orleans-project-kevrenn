@@ -37,22 +37,6 @@ class AdminEventController extends AbstractController
         $this->isTooLong('Image', $event['image_link'], self::IMAGE_LINK_LENGTH);
     }
 
-    public function index(): string
-    {
-        $eventManager = new EventManager();
-        $events = $eventManager->selectALL();
-
-        return $this->twig->render('Admin/Event/index.html.twig', ['events' => $events]);
-    }
-
-    public function show(int $id): string
-    {
-        $eventManager = new EventManager();
-        $event = $eventManager->selectOneById($id);
-
-        return $this->twig->render('/Admin/Event/_show.html.twig', ['event' => $event]);
-    }
-
     public function edit(int $id): ?string
     {
         $eventManager = new EventManager();
