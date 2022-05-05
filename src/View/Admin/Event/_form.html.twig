@@ -15,11 +15,11 @@
 	<label for="name">Date</label>
 	<input type="date" value="{{ event.date }}" name="date" id="date">
 	<label for="name">Description</label>
-	<input type="text" value="{{ event.description }}" name="description" id="description">
+	<input type="textarea" value="{{ event.description }}" name="description" id="description">
 	<label for="name">Adresse</label>
 	<input type="text" value="{{ event.address }}" name="address" id="address">
 	<label for="name">Image</label>
-	<input type="text" value="{{ event.image_link }}" name="image_link" id="image_link">
+	<input type="url" value="{{ event.image_link }}" name="image_link" id="image_link">
 
 
 	<button class="btn w-25 my-2 align-self-center">Envoi</button>
