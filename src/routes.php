@@ -15,6 +15,7 @@ return [
     'items/show' => ['ItemController', 'show', ['id']],
     'items/add' => ['ItemController', 'add',],
     'items/delete' => ['ItemController', 'delete',],
+    'contact' => ['ContactController', 'index'],
     'evenements' => ['EventController', 'index'],
     'admin/evenements' => ['AdminEventController', 'index',],
     'evenement' => ['EventController','show', ['id']],
@@ -30,5 +31,5 @@ return [
     'admin/membres/ajouter' => ['AdminMemberController', 'add',],
     'admin/membres/supprimer' => ['AdminMemberController', 'delete', ['id']],
     'admin/partenaires' => ['AdminPartnerController', 'index'],
-    'admin/partenaires/ajouter' => ['AdminPartnerController', 'add'],
+    'admin/partenaires/ajouter' => ['AdminPartnerController', 'add']
 ];
