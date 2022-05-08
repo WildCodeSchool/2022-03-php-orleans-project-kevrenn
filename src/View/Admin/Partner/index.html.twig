@@ -12,12 +12,15 @@
 		</div>
 		<div class="row container-fluid d-flex justify-content-center m-auto">
 			{% for partner in partners %}
-				<div class="card col-lg-3 m-2 d-flex flex-row justify-content-between">
-					<div class="d-flex flex-column justify-content-center col-8 mt-2">
-						<p class="fs-5">{{ partner.name }}</p>
-						<p class="fs-6">{{ partner.url }}</p>
+				<div class="card col-lg-3 m-2 d-flex flex-column justify-content-between">
+					<div class="d-flex">
+						<div class="d-flex flex-column justify-content-center col-8 mt-2">
+							<p class="fs-5">{{ partner.name }}</p>
+							<p class="fs-6">{{ partner.url }}</p>
+						</div>
+						<img class="m-2 align-self-center" src="/assets/images/{{ partner.logo_link }}" alt=" {{ partner.name }}" width="50%" height="50%">
 					</div>
-					<img class="m-2 align-self-center" src="/assets/images/{{ partner.logo_link }} alt=" {{ partner.name }} width="50%" height="50%">
+					<a class="text-decoration-none btn align-self-center my-2" href="/admin/partenaires/modifier?id={{ partner.id }}">Modifier</a>
 				</div>
 			{% endfor %}
 		</div>
