@@ -5,6 +5,7 @@
 {% block content %}
 	<main class="container">
 		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
+		<a class="text-decoration-none btn my-1 btn-hover" href="/admin/evenements/ajouter?id={{ event.id }}">Ajouter</a>
 		<table class="table table-hover">
 			{% for event in events %}
 				<tbody>
@@ -20,7 +21,7 @@
 					</tr>
 					<tr>
 						<th>
-							<a class="text-decoration-none btn my-1" href="/admin/evenements/ajouter?id={{ event.id }}">Ajouter</a>
+							
 						</th>
 					</tr>
 					<tr>
