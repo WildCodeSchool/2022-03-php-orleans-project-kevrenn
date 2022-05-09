@@ -1,13 +1,13 @@
 {% extends 'layout.html.twig' %}
 
 {% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/style.css">
 	<link rel="stylesheet" href="/assets/css/workshop.css">
-
 {% endblock %}
 
 {% block content %}
 	<main class="container">
-		<h1 class="m-5 d-flex align-items-center">Ateliers</h1>
+		<h1 class="lacetitle m-5 d-flex align-items-center">Ateliers</h1>
 		<div class="row ">
 			{% for workshop in workshops %}
 				{% include "Includes/_card_workshop.html.twig" %}

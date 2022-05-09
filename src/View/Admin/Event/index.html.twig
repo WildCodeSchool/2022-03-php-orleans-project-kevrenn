@@ -1,8 +1,7 @@
 {% extends 'layout_admin.html.twig' %}
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/adminevents.css">
+	<link rel="stylesheet" href="/assets/css/adminevent.css">
 {% endblock %}
-
 {% block content %}
 	<main class="container">
 		<h1 class=" d-flex justify-content-center m-5">Admin Événements</h1>
@@ -27,7 +26,7 @@
 					<th>
 						<form action="/admin/evenements/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer cet événement ?')">
 							<input type="hidden" name="id" value="{{ event.id }}">
-							<button class="btn my-1">Supprimer</button>
+							<button class="btn btn-danger my-1">Supprimer</button>
 						</form>
 					</th>
 				</tbody>
