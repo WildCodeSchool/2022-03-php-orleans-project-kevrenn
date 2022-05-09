@@ -1,8 +1,7 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/adminworkshop.css">
-
+	<link rel="stylesheet" href="/assets/css/styleAdmin.css">
 {% endblock %}
 
 {% block content %}
@@ -15,7 +14,7 @@
 				<tbody>
 					{% for workshop in workshops %}
 						<tr>
-							<th>{{ workshop.name }}</th>
+							<th class="align-middle">{{ workshop.name }}</th>
 							<td>
 								<a class="text-decoration-none btn my-1" href="/admin/atelier/modifier?id={{ workshop.id }}">Modifier</a>
 							</td>
