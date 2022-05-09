@@ -19,6 +19,7 @@
     --title-font: 'eagle_lakeregular', arial;
     --text-font: 'Poppins', sans-serif;
 
+
     --text-size: 1.25rem;
     --title-sizeh1:calc(var(--text-size) * 3); 
     --title-sizeh2:calc(var(--text-size) * 2); 
@@ -37,6 +38,18 @@ body {
 h1, h2, h3 {
     font-family: var(--title-font);
     color: var(--bs-dark);
+}
+
+.lacetitle::before {
+    content: url('/assets/images/dentelle-gauche.png');
+    left: 50px;
+    top: 30px
+}
+
+.lacetitle::after {
+    content: url('/assets/images/dentelle-droite.png');
+    right: 50px;
+    top: 30px
 }
 
 button{

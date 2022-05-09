@@ -24,22 +24,27 @@ h2::after {
     top: 30px
 }
 
-.members>h2::after {
+.members>h2::after, .partners>h2::after {
     content: url('/assets/images/dentelle-droite-blanche.png');
     position: relative;
     right: 50px;
     top: 30px
 }
 
-.members>h2::before {
+.members>h2::before, .partners>h2::before {
     content: url('/assets/images/dentelle-gauche-blanche.png');
     position: relative;
     left: 50px;
     top: 30px
 }
 
-.bagad-cercle {
-    position: relative;
+.logoPartner {
+    filter: grayscale(1);
+    transition: filter 0.5s;
+}
+
+.logoPartner:hover {
+    filter: none;
 }
 
 .separation {
@@ -51,6 +56,19 @@ h2::after {
     left: 50%;
 }
 
+.separationX {
+    background-image: url('/assets/images/sep-lace-primary.png');
+    background-size: contain;
+    height: 2rem;
+}
+
+.separationX-white {
+    background-image: url('/assets/images/sep-lace-white.png');
+    background-size: contain;
+    height: 2rem;
+    top: -4rem;
+}
+
 @media screen and (max-width:700px) {
     h2::before {
         content: "";
@@ -60,11 +78,11 @@ h2::after {
         content: "";
     }
     
-    .members>h2::after {
+    .members>h2::after, .partners>h2::after {
         content: "";
     }
     
-    .members>h2::before {
+    .members>h2::before, .partners>h2::before {
         content: "";
     }
 }
