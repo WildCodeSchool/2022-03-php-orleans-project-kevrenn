@@ -34,4 +34,5 @@ return [
     'admin/partenaires' => ['AdminPartnerController', 'index'],
     'admin/partenaires/ajouter' => ['AdminPartnerController', 'add'],
     'admin/partenaires/modifier' => ['AdminPartnerController', 'edit', ['id']],
+    'admin/partenaires/supprimer' => ['AdminPartnerController', 'delete', ['id']],
 ];
