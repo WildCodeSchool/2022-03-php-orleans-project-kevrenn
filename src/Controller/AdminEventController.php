@@ -45,6 +45,7 @@ class AdminEventController extends AbstractController
     }
     public function add(): ?string
     {
+        $event = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $event = array_map('trim', $_POST);
@@ -52,15 +53,18 @@ class AdminEventController extends AbstractController
             // TODO validations (length, format...)
 
             // if validation is ok, insert and redirection
-            $eventManager = new EventManager();
-            $eventManager->insert($event);
-
-            header('Location: /admin/evenements/');
-            return null;
+            $this->validate($event);
+            if (empty($this->errors)) {
+                $eventManager = new EventManager();
+                $eventManager->insert($event);
+                header('Location: /admin/evenements');
+            }
         }
 
-
-        return $this->twig->render('Admin/Event/add.html.twig');
+        return $this->twig->render('Admin/Event/add.html.twig', [
+            'event' => $event,
+            'errors' => $this->getErrors(),
+        ]);
     }
 
     public function edit(int $id): ?string
