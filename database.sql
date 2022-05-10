@@ -61,8 +61,18 @@ CREATE TABLE `event` (
   `name` VARCHAR(80) NOT NULL,
   `date` DATETIME NOT NULL,
   `description` TEXT(1000) NOT NULL,
-  `address` VARCHAR(255) NOT NULL
+  `address` VARCHAR(255) NOT NULL,
+  `media_id` INT
 );
+
+ CREATE TABLE `media` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `image_url` VARCHAR(255)
+  );
+
+ALTER TABLE event
+ADD FOREIGN KEY (media_id) REFERENCES media(id);
+
 INSERT INTO event (
     `image_link`,
     `name`,
