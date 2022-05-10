@@ -66,7 +66,7 @@ CREATE TABLE `event` (
 
  CREATE TABLE `media` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `image_url` VARCHAR(255),
+  `image` VARCHAR(255),
   `event_id` INT
   );
 

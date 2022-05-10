@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\EventManager;
+use App\Model\MediaManager;
 
 class AdminEventController extends AbstractController
 {
@@ -54,6 +55,23 @@ class AdminEventController extends AbstractController
         }
     }
 
+    private function validateImages(array $files, int $position): void
+    {
+        if ($files['error'][$position] === UPLOAD_ERR_NO_FILE) {
+            $this->errors[] = 'Le fichier est obligatoire';
+        } elseif ($files['error'][$position] !== UPLOAD_ERR_OK) {
+            $this->errors[] = 'Problème de téléchargement du fichier';
+        } else {
+            if ($files['size'][$position] > self::MAX_FILE_SIZE) {
+                $this->errors[] = 'Le fichier doit faire moins de ' . self::MAX_FILE_SIZE / 1000000 . 'Mo';
+            }
+
+            if (!in_array(mime_content_type($files['tmp_name'][$position]), self::AUTHORIZED_MIMES)) {
+                $this->errors[] = 'Le fichier doit être de type ' . implode(', ', self::AUTHORIZED_MIMES);
+            }
+        }
+    }
+
     public function index(): string
     {
         $eventManager = new EventManager();
@@ -94,9 +112,11 @@ class AdminEventController extends AbstractController
     {
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);
+        $media = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = array_map('trim', $_POST);
             $imageFile = $_FILES['image_link'];
+            $images = $_FILES['images'];
 
             $this->validate($event);
             $this->validateImage($imageFile);
@@ -106,6 +126,16 @@ class AdminEventController extends AbstractController
                 $imageName = uniqid('', true) . '.' . $extension;
 
                 move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+                $mediaManager = new MediaManager();
+                foreach ($images['name'] as $position => $imageName) {
+                    $this->validateImages($images, $position);
+                    $extension = pathinfo($images['name'][$position], PATHINFO_EXTENSION);
+                    $imageName = uniqid('', true) . '.' . $extension;
+                    move_uploaded_file($images['tmp_name'][$position], UPLOAD_PATH . '/' . $imageName);
+                    $media['image'] = $imageName;
+                    $media['event.id'] = $event['id'];
+                    $mediaManager->insert($media);
+                }
 
                 $event['image_link'] = $imageName;
                 $eventManager->update($event);
