@@ -17,20 +17,13 @@ class MediaManager extends AbstractManager
         $statement->execute();
         return (int)$this->pdo->lastInsertId();
     }
-
-    public function update(array $event): bool
+    public function selectByEventId(int $eventId)
     {
-        $statement = $this->pdo->prepare("UPDATE " . self::TABLE .
-            " SET `name`= :name,`date`=:date, `description` = :description,
-        `address` = :address, `image_link` = :image_link WHERE id=:id");
-        $statement->bindValue('id', $event['id'], \PDO::PARAM_INT);
-        $statement->bindValue('name', $event['name'], \PDO::PARAM_STR);
-        $statement->bindValue('date', $event['date'], \PDO::PARAM_STR);
-        $statement->bindValue('description', $event['description'], \PDO::PARAM_STR);
-        $statement->bindValue('address', $event['address'], \PDO::PARAM_STR);
-        $statement->bindValue('image_link', $event['image_link'], \PDO::PARAM_STR);
+        $query = 'SELECT * FROM ' . self::TABLE . ' WHERE event_id=:eventId';
+        $statement = $this->pdo->prepare($query);
+        $statement->bindValue('eventId', $eventId, \PDO::PARAM_INT);
+        $statement->execute();
 
-
-        return $statement->execute();
+        return $statement->fetchAll();
     }
 }

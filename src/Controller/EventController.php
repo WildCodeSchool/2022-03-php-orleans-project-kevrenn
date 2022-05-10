@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Model\EventManager;
+use App\Model\MediaManager;
 
 class EventController extends AbstractController
 {
@@ -17,8 +18,9 @@ class EventController extends AbstractController
     public function show(int $id): string
     {
         $eventManager = new EventManager();
+        $mediaManager = new MediaManager();
         $event = $eventManager->selectOneById($id);
-
-        return $this->twig->render('Event/description.html.twig', ['event' => $event]);
+        $images = $mediaManager->selectByEventId($id);
+        return $this->twig->render('Event/description.html.twig', ['event' => $event,'images' => $images]);
     }
 }
