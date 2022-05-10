@@ -36,6 +36,10 @@ p {
     background-color: var(--bs-primary);
 }
 
+img {
+    height: 300px;
+    object-fit: cover;
+}
 .btn {
     background-color: aliceblue;
     color: var(--bs-dark);
