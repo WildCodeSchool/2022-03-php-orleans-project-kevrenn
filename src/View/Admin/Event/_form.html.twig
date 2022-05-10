@@ -8,7 +8,7 @@
 	</div>
 {% endif %}
 
-<form method="post" class="container-fluid d-flex flex-column w-50 m-auto p-2">
+<form method="post" enctype="multipart/form-data" class="container-fluid d-flex flex-column w-50 m-auto p-2">
 	<input type="hidden" class="form-control" value="{{ event.id }}" name="id">
 	<label for="name"class="form-label">Nom</label>
 	<input type="text"class="form-control" value="{{ event.name }}" name="name" id="name">
@@ -18,11 +18,15 @@
 	<input type="textarea"class="form-control" value="{{ event.description }}" name="description" id="description">
 	<label for="name"class="form-label">Adresse</label>
 	<input type="text"class="form-control" value="{{ event.address }}" name="address" id="address">
-	<label for="name"class="form-label">Image</label>
-	<input type="url"class="form-control" value="{{ event.image_link }}" name="image_link" id="image_link">
+
+
 	<label class="form-label mt-4" for="image_link">Image pour l'événement</label>
 	<input type="file" name="image_link" id="image_link"/>
-	
+
+<!--
+	<label class="form-label mt-4" for="image_link">D'autres Images pour l'événement</label>
+	<input type="file" name="image_urls[]" multiple id="image_url"/>
+	-->
 	<button class="btn-primary my-2 align-self-center">Envoi</button>
 </form>
 {% block footer %}{% endblock %}
