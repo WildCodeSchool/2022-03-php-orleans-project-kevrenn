@@ -38,6 +38,11 @@ class AdminEventController extends AbstractController
     }
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $eventManager = new EventManager();
         $events = $eventManager->selectAll('name');
 
@@ -45,6 +50,11 @@ class AdminEventController extends AbstractController
     }
     public function add(): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $event = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -69,6 +79,11 @@ class AdminEventController extends AbstractController
 
     public function edit(int $id): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);
 
@@ -95,6 +110,10 @@ class AdminEventController extends AbstractController
 
     public function delete(): void
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $eventManager = new EventManager();
