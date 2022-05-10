@@ -16,3 +16,6 @@ a:hover{
     color: var(--bs-light);
 }
 
+.adminMembres img {
+    width: 100px;
+}
