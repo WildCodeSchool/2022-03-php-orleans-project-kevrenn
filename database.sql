@@ -40,7 +40,7 @@ VALUES ('Titouan Kervadec', 'Président', ''),
 CREATE TABLE IF NOT EXISTS `workshop` (
   `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `name` VARCHAR(155) NOT NULL,
-  `date` DATETIME NOT NULL,
+  `date` VARCHAR(255) NOT NULL,
   `address` VARCHAR(255) NOT NULL,
   `description` TEXT NULL);
    
@@ -63,6 +63,16 @@ CREATE TABLE `event` (
   `description` TEXT(1000) NOT NULL,
   `address` VARCHAR(255) NOT NULL
 );
+
+ CREATE TABLE `media` (
+  `id` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `image` VARCHAR(255),
+  `event_id` INT
+  );
+
+ALTER TABLE media
+ADD FOREIGN KEY (event_id) REFERENCES event(id);
+
 INSERT INTO event (
     `image_link`,
     `name`,

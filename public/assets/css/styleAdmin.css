@@ -1,0 +1,21 @@
+button{
+    font-size: var(--text-size);
+}
+
+button:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
+
+.btn{
+    font-size: var(--text-size);
+}
+
+a:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-light);
+}
+
+.adminMembres img {
+    width: 100px;
+}

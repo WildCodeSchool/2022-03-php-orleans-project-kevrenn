@@ -1,34 +1,30 @@
 {% extends 'layout_admin.html.twig' %}
 
-{% block stylesheet %}
-	<link rel="stylesheet" href="/assets/css/adminmember.css">
-{% endblock %}
-
 {% block content %}
 	<main>
 		<h1 class="m-5 text-center">Admin membres</h1>
 		<div class="row container-fluid d-flex justify-content-center m-auto">
 			<a class="text-decoration-none btn col-lg-1 col-md-3 justify-self-center" href="/admin/membres/ajouter">Ajouter</a>
 		</div>
-		<div class="row container-fluid d-flex justify-content-center m-auto">
+		<div class="row container-fluid d-flex justify-content-center m-auto flex-wrap adminMembres">
 			{% for member in members %}
-				<div class="card col-lg-3 m-2 d-flex flex-row justify-content-between">
+				<div class="card col-lg-3 col-md-7 m-2 d-flex flex-row justify-content-between">
 					<div class="d-flex flex-column justify-content-center col-4 mt-2">
 						<p class="fs-5">{{ member.name }}</p>
 						<p class="fs-6">{{ member.status }}</p>
 					</div>
 
-					<img class="m-2 align-self-center" src="/assets/images/
+					<img class="m-2 align-self-center" src="
 													{% if member.photo_link %}
-														{{ member.photo_link }}
+														{{ '/' ~ constant('UPLOAD_PATH') ~ '/' ~ member.photo_link }}"
 													{% else %}
-														{{ 'portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}" width="100px" height="100px">
+														{{ '/assets/images/portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}">
 
 					<div class="d-flex flex-column justify-content-center">
-						<a class="text-decoration-none btn my-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
+						<a class="text-decoration-none btn my-1 px-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
 						<form action="/admin/membres/supprimer" method="POST" onSubmit="return confirm('Etes-vous sûr de vouloir supprimer ce membre ?')">
 							<input type="hidden" name="id" value="{{ member.id }}">
-							<button class="btn my-1">Supprimer</button>
+							<button class="btn my-1 px-1">Supprimer</button>
 						</form>
 					</div>
 				</div>
