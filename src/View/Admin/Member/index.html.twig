@@ -16,9 +16,9 @@
 
 					<img class="m-2 align-self-center" src="
 													{% if member.photo_link %}
-														{{ '/' ~ constant('UPLOAD_PATH') ~ '/' ~ member.photo_link }}"
+														{{ '/' ~ constant('UPLOAD_PATH') ~ '/' ~ member.photo_link }}
 													{% else %}
-														{{ '/assets/images/portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}">
+														{{ '/assets/images/portrait-placeholder.png' }} {% endif %}" alt="{{ member.name }}">
 
 					<div class="d-flex flex-column justify-content-center">
 						<a class="text-decoration-none btn my-1 px-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
