@@ -9,11 +9,17 @@
 {% endif %}
 
 
-<form method="post" class="card d-flex flex-column w-50 m-auto p-2">
+<form method="post" enctype="multipart/form-data" class="card d-flex flex-column w-50 m-auto p-2">
 	<input type="hidden" value="{{ member.id }}" name="id">
-	<label for="name">Nom</label>
+
+	<label class="form-label mt-4" for="name">Nom</label>
 	<input type="text" value="{{ member.name }}" name="name" id="name">
-	<label for="status">Statut</label>
+
+	<label class="form-label mt-4"  for="status">Statut</label>
 	<input type="text" value="{{ member.status }}" name="status" id="status">
+
+	<label class="form-label mt-4" for="photo_link">Charger une photo du membre</label>
+	<input type="file" name="photo_link" id="photo_link"/>
+
 	<button class="btn w-25 my-2 align-self-center">Envoi</button>
 </form>
