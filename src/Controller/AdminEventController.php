@@ -3,12 +3,15 @@
 namespace App\Controller;
 
 use App\Model\EventManager;
+use App\Model\MediaManager;
 
 class AdminEventController extends AbstractController
 {
     public const NAME_LENGTH = 255;
     public const ADRESS_LENGTH = 255;
     public const IMAGE_LINK_LENGTH = 255;
+    public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
+    public const MAX_FILE_SIZE = 1000000;
     public array $errors = [];
 
     private function isEmpty(string $label, $input): void
@@ -31,11 +34,27 @@ class AdminEventController extends AbstractController
         $this->isEmpty('Date', $event['date']);
         $this->isEmpty('Description', $event['description']);
         $this->isEmpty('Adresse', $event['address']);
-        $this->isEmpty('Image', $event['image_link']);
         $this->isTooLong('Nom', $event['name'], self::NAME_LENGTH);
         $this->isTooLong('Adresse', $event['address'], self::ADRESS_LENGTH);
-        $this->isTooLong('Image', $event['image_link'], self::IMAGE_LINK_LENGTH);
     }
+
+    private function validateImage(array $files): void
+    {
+        if ($files['error'] === UPLOAD_ERR_NO_FILE) {
+            $this->errors[] = 'Le fichier est obligatoire';
+        } elseif ($files['error'] !== UPLOAD_ERR_OK) {
+            $this->errors[] = 'Problème de téléchargement du fichier';
+        } else {
+            if ($files['size'] > self::MAX_FILE_SIZE) {
+                $this->errors[] = 'Le fichier doit faire moins de ' . self::MAX_FILE_SIZE / 1000000 . 'Mo';
+            }
+
+            if (!in_array(mime_content_type($files['tmp_name']), self::AUTHORIZED_MIMES)) {
+                $this->errors[] = 'Le fichier doit être de type ' . implode(', ', self::AUTHORIZED_MIMES);
+            }
+        }
+    }
+
     public function index(): string
     {
         $eventManager = new EventManager();
@@ -49,13 +68,18 @@ class AdminEventController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $event = array_map('trim', $_POST);
-
-            // TODO validations (length, format...)
+            $imageFile = $_FILES['image_link'];
 
             // if validation is ok, insert and redirection
             $this->validate($event);
+            $this->validateImage($imageFile);
             if (empty($this->errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
                 $eventManager = new EventManager();
+                $event['image_link'] = $imageName;
                 $eventManager->insert($event);
                 header('Location: /admin/evenements');
             }
@@ -71,12 +95,31 @@ class AdminEventController extends AbstractController
     {
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);
-
+        $media = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = array_map('trim', $_POST);
+            $imageFile = $_FILES['image_link'];
+            $images = $_FILES['images'];
 
             $this->validate($event);
+            $this->validateImage($imageFile);
+
             if (empty($this->errors)) {
+                $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
+                $imageName = uniqid('', true) . '.' . $extension;
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+                $mediaManager = new MediaManager();
+                foreach ($images['name'] as $position => $imageName) {
+                    $this->validateImage($images);
+                    $extension = pathinfo($images['name'][$position], PATHINFO_EXTENSION);
+                    $imageName = uniqid('', true) . '.' . $extension;
+                    move_uploaded_file($images['tmp_name'][$position], UPLOAD_PATH . '/' . $imageName);
+                    $media['image'] = $imageName;
+                    $media['event.id'] = $event['id'];
+                    $mediaManager->insert($media);
+                }
+
+                $event['image_link'] = $imageName;
                 $eventManager->update($event);
 
                 header('Location: /admin/evenements/');
