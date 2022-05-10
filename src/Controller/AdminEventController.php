@@ -36,6 +36,36 @@ class AdminEventController extends AbstractController
         $this->isTooLong('Adresse', $event['address'], self::ADRESS_LENGTH);
         $this->isTooLong('Image', $event['image_link'], self::IMAGE_LINK_LENGTH);
     }
+    public function index(): string
+    {
+        $eventManager = new EventManager();
+        $events = $eventManager->selectAll('name');
+
+        return $this->twig->render('Admin/Event/index.html.twig', ['events' => $events]);
+    }
+    public function add(): ?string
+    {
+        $event = [];
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            // clean $_POST data
+            $event = array_map('trim', $_POST);
+
+            // TODO validations (length, format...)
+
+            // if validation is ok, insert and redirection
+            $this->validate($event);
+            if (empty($this->errors)) {
+                $eventManager = new EventManager();
+                $eventManager->insert($event);
+                header('Location: /admin/evenements');
+            }
+        }
+
+        return $this->twig->render('Admin/Event/add.html.twig', [
+            'event' => $event,
+            'errors' => $this->getErrors(),
+        ]);
+    }
 
     public function edit(int $id): ?string
     {
