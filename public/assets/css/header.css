@@ -11,10 +11,10 @@ header {
     width: 100%;
     height: 100%;
     z-index: 1;
-    background-image: url('/assets/images/orleans_home.jpg');
+    background-image: url('/assets/images/orleans_header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: 10% 0;
+    background-position: 50% 0;
 }
 
 .header>h1, .header>h2 {
