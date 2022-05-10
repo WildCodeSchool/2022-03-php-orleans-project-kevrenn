@@ -6,7 +6,7 @@
 		<div class="row container-fluid d-flex justify-content-center m-auto">
 			<a class="text-decoration-none btn col-lg-1 col-md-3 justify-self-center" href="/admin/membres/ajouter">Ajouter</a>
 		</div>
-		<div class="row container-fluid d-flex justify-content-center m-auto flex-wrap">
+		<div class="row container-fluid d-flex justify-content-center m-auto flex-wrap adminMembres">
 			{% for member in members %}
 				<div class="card col-lg-3 col-md-7 m-2 d-flex flex-row justify-content-between">
 					<div class="d-flex flex-column justify-content-center col-4 mt-2">
@@ -18,7 +18,7 @@
 													{% if member.photo_link %}
 														{{ '/' ~ constant('UPLOAD_PATH') ~ '/' ~ member.photo_link }}"
 													{% else %}
-														{{ '/assets/images/portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}" width="100px" height="100px">
+														{{ '/assets/images/portrait-placeholder.png' }}" {% endif %} alt="{{ member.name }}">
 
 					<div class="d-flex flex-column justify-content-center">
 						<a class="text-decoration-none btn my-1 px-1" href="/admin/membres/modifier?id={{ member.id }}">Modifier</a>
