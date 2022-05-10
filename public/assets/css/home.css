@@ -48,7 +48,7 @@ h2::after {
 }
 
 .logoPartner img {
-    width: 150px;
+    width: 175px;
 }
 
 
@@ -89,10 +89,8 @@ h2::after {
     .members>h2::before, .partners>h2::before {
         content: "";
     }
-}
 
-@media screen and (max-width:1000px) {
-    .separation {
-        display: none;
+    .history {
+        padding-block-start: 0;
     }
 }
