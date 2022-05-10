@@ -1,0 +1,17 @@
+{% extends 'layout_admin.html.twig' %}
+
+{% block stylesheet %}
+	<link rel="stylesheet" href="/assets/css/adminevents.css">
+{% endblock %}
+
+{% block content %}
+	<main>
+		<h1 class="m-5 text-center">Ajouter des événements</h1>
+		{% include '/Admin/Event/_form.html.twig' %}
+		<div class="mw-100 text-center">
+			<a class="text-decoration-none btn my-1" href="/admin/evenements/">Retour à la liste des événements</a>
+		</div>
+	</main>
+{% endblock %}
+
+{% block footer %}{% endblock %}
