@@ -18,8 +18,9 @@
 	<input type="textarea"class="form-control" value="{{ event.description }}" name="description" id="description">
 	<label for="name"class="form-label">Adresse</label>
 	<input type="text"class="form-control" value="{{ event.address }}" name="address" id="address">
-	<label for="name"class="form-label">Image</label>
-	<input type="url"class="form-control" value="{{ event.image_link }}" name="image_link" id="image_link">
+	<label class="form-label mt-4" for="image_link">Image pour l'événement</label>
+	<input type="file" name="image_link" id="image_link"/>
+	
 	<button class="btn-primary my-2 align-self-center">Envoi</button>
 </form>
 {% block footer %}{% endblock %}
