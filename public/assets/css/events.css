@@ -1,5 +1,5 @@
 h1 {
-    font-size: var(--title-sizeh1)
+    font-size: var(--title-sizeh1);
 }
 h1,
 h2 {
@@ -7,30 +7,26 @@ h2 {
     justify-content: center;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    
 }
 h2 {
-    font-size: var(--title-sizeh2)
+    font-size: var(--title-sizeh2);
 }
 h3 {
     display: flex;
     justify-content: center;
-    margin-top: 1.5rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem;
     color: aliceblue;
-    font-size: var(--title-sizeh3)
+    font-size: var(--title-sizeh3);
 }
 p {
     display: flex;
     justify-content: center;
     color: aliceblue;
-
 }
 
-.date{
+.date {
     font-size: 1.3rem;
     margin-top: 1.5rem;
-    
 }
 
 .border-secondary {
@@ -38,15 +34,13 @@ p {
 }
 .card {
     background-color: var(--bs-primary);
-    
-    
 }
 
 .btn {
     background-color: aliceblue;
     color: var(--bs-dark);
 }
-.btn:hover{
+.btn:hover {
     background-color: var(--bs-secondary);
     color: var(--bs-light);
 }
