@@ -7,7 +7,7 @@ use App\Model\MediaManager;
 
 class AdminEventController extends AbstractController
 {
-    public const NAME_LENGTH = 255;
+    public const NAME_LENGTH = 80;
     public const ADRESS_LENGTH = 255;
     public const IMAGE_LINK_LENGTH = 255;
     public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
