@@ -8,6 +8,7 @@ class AdminEventController extends AbstractController
 {
     public const NAME_LENGTH = 255;
     public const ADRESS_LENGTH = 255;
+    public const IMAGE_LINK_LENGTH = 255;
     public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
     public const MAX_FILE_SIZE = 1000000;
     public array $errors = [];
@@ -32,8 +33,10 @@ class AdminEventController extends AbstractController
         $this->isEmpty('Date', $event['date']);
         $this->isEmpty('Description', $event['description']);
         $this->isEmpty('Adresse', $event['address']);
+        $this->isEmpty('Image', $event['image_link']);
         $this->isTooLong('Nom', $event['name'], self::NAME_LENGTH);
         $this->isTooLong('Adresse', $event['address'], self::ADRESS_LENGTH);
+        $this->isTooLong('Image', $event['image_link'], self::IMAGE_LINK_LENGTH);
     }
 
     private function validateImage(array $files): void
@@ -66,7 +69,7 @@ class AdminEventController extends AbstractController
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
             $event = array_map('trim', $_POST);
-            $imageFile = $_FILES['image_link'];
+            $imageFile = $_FILES['url_link'];
 
             // if validation is ok, insert and redirection
             $this->validate($event);
@@ -77,7 +80,7 @@ class AdminEventController extends AbstractController
 
                 move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
                 $eventManager = new EventManager();
-                $event['image_link'] = $imageName;
+                $event['url_link'] = $imageName;
                 $eventManager->insert($event);
                 header('Location: /admin/evenements');
             }
@@ -96,7 +99,7 @@ class AdminEventController extends AbstractController
 
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $event = array_map('trim', $_POST);
-            $imageFile = $_FILES['image_link'];
+            $imageFile = $_FILES['url_link'];
 
             $this->validate($event);
             $this->validateImage($imageFile);
@@ -107,7 +110,7 @@ class AdminEventController extends AbstractController
 
                 move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
 
-                $event['image_link'] = $imageName;
+                $event['url_link'] = $imageName;
                 $eventManager->update($event);
 
                 header('Location: /admin/evenements/');
