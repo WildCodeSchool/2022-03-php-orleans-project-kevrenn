@@ -30,8 +30,8 @@
 				<form method="post" class="col-md-6 d-flex flex-column">
 
 					<div class="">
-						<label for="lastname validationServer01" class="form-label">Nom</label>
-						<input type="lastname" class="form-control" value="{{ contact.lastname }}" name="lastname" id="name" aria-describedby="" placeholder="Gallouedec">
+						<label for="lastname" class="form-label">Nom</label>
+						<input type="lastname" class="form-control" value="{{ contact.lastname }}" name="lastname" id="lastname" aria-describedby="" placeholder="Gallouedec">
 					</div>
 					<div class="mt-3">
 						<label for="firstname" class="form-label">Prénom</label>
@@ -43,7 +43,7 @@
 					</div>
 					<div class="mt-3">
 						<label for="message" class="form-label">Message</label>
-						<textarea type="message" class="form-control" value="{{ contact.message }}" name="message" placeholder="Message" id="message" composer require symfony/mailer></textarea>
+						<textarea type="message" class="form-control" value="{{ contact.message }}" name="message" placeholder="Message" id="message"></textarea>
 					</div>
 
 					<button type="submit" class="btn btn-primary mt-3 w-50 align-self-center">Envoyer</button>
