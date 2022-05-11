@@ -27,3 +27,8 @@ h2::after {
     background-color: var(--bs-light);
     color: var(--bs-primary);
 }
+
+.contact-image {
+
+max-height: 33vh;
+}
