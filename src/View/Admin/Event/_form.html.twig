@@ -10,13 +10,13 @@
 
 <form method="post" enctype="multipart/form-data" class="container-fluid d-flex flex-column w-50 m-auto p-2">
 	<input type="hidden" class="form-control" value="{{ event.id }}" name="id">
-	<label for="name"class="form-label">Nom</label>
+	<label for="name"class="form-label pb-2 mt-3">Nom</label>
 	<input type="text"class="form-control" value="{{ event.name }}" name="name" id="name">
-	<label for="name"class="form-label">Date</label>
+	<label for="name"class="form-label pb-2 mt-3">Date</label>
 	<input type="date"class="form-control" value="{{ event.date }}" name="date" id="date">
-	<label for="name"class="form-label">Description</label>
+	<label for="name"class="form-label pb-2 mt-3">Description</label>
 	<input type="textarea"class="form-control" value="{{ event.description }}" name="description" id="description">
-	<label for="name"class="form-label">Adresse</label>
+	<label for="name"class="form-label pb-2 mt-3">Adresse</label>
 	<input type="text"class="form-control" value="{{ event.address }}" name="address" id="address">
 
 
