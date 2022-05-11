@@ -8,8 +8,8 @@
 		<div class="eventTitle">
 			<h1 class="lacetitle d-flex align-items-center">Évènements</h1>
 		</div>
+			<h2>À Venir</h2>
 		<div class="toComeTitle">
-			<h2>A Venir</h2>
 		</div>
 		<div class="row">
 			{% for event in events %}
@@ -17,7 +17,7 @@
 					{% include "Includes/_card.html.twig" %}
 				{% endif %}
 			{% endfor %}
-			<h2>Passé</h2>
+			<h2>Passés</h2>
 			{% for event in events %}
 				{% if event.date < 'now'|date("Y-m-d") %}
 					{% include "Includes/_card.html.twig" %}
