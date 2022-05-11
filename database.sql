@@ -83,15 +83,15 @@ INSERT INTO event (
 VALUES (
     '',
     'Mariage Germignon',
-    DATE '2022-04-09',
+    DATE '2022-09-09',
     'Le Mariage Germignon',
-    "Chateau d'Orléans"
+    "Château d'Orléans"
   ),
   (
     '',
-    'Rentrée en Féte',
-    DATE '2022-05-09',
-    'La Rentrée en Fête',
+    'Rentrée en Fête ',
+    DATE '2022-09-09',
+    'La Rentrée en Fête ',
     "Cathédrale d'Orléans"
   ),
   (
@@ -106,19 +106,19 @@ VALUES (
     'Mariage Germignon',
     DATE '2022-04-09',
     'Le Mariage Germignon',
-    "Chateau d'Orléans"
+    "Château d'Orléans"
   ),
   (
     '',
-    'Rentrée en Féte',
-    DATE '2022-05-09',
-    'La Rentrée en Fête',
+    'Rentrée en Fête ',
+    DATE '2022-04-09',
+    'La Rentrée en Fête ',
     "Cathédrale d'Orléans"
   ),
   (
     '',
     ' Mariage La Ferté',
-    DATE '2022-09-09',
+    DATE '2022-04-09',
     'Le Mariage La Ferté',
     "Château d'Orléans"
   );
