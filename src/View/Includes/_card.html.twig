@@ -4,7 +4,7 @@
 		<h3>
 			{{event.name}}
 		</h3>
-		<img class="card" src={% if event.image_link is empty %} "assets/images/placeholderevent.jpeg" {% else %} "{{ '/' ~ constant('UPLOAD_PATH') ~ '/' ~ event.image_link }}"
+		<img src={% if event.image_link is empty %} "assets/images/placeholderevent.jpeg" {% else %} "{{ '/' ~ constant('UPLOAD_PATH') ~ '/' ~ event.image_link }}"
 			 {% endif %} alt="{{ event.name }}">
 
 		<p class="date">

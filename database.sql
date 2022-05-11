@@ -82,9 +82,9 @@ INSERT INTO event (
   )
 VALUES (
     '',
-    'Mariage Germignonville',
+    'Mariage Germignon',
     DATE '2022-04-09',
-    'Le Mariage Germignonville',
+    'Le Mariage Germignon',
     "Chateau d'Orléans"
   ),
   (
@@ -103,9 +103,9 @@ VALUES (
   ),
   (
     '',
-    'Mariage Germignonville',
+    'Mariage Germignon',
     DATE '2022-04-09',
-    'Le Mariage Germignonville',
+    'Le Mariage Germignon',
     "Chateau d'Orléans"
   ),
   (
