@@ -7,7 +7,7 @@ use App\Model\MediaManager;
 
 class AdminEventController extends AbstractController
 {
-    public const NAME_LENGTH = 255;
+    public const NAME_LENGTH = 80;
     public const ADRESS_LENGTH = 255;
     public const IMAGE_LINK_LENGTH = 255;
     public const AUTHORIZED_MIMES = ['image/jpeg', 'image/jpg', 'image/png', 'image/webp'];
@@ -57,6 +57,11 @@ class AdminEventController extends AbstractController
 
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $eventManager = new EventManager();
         $events = $eventManager->selectAll('name');
 
@@ -64,6 +69,11 @@ class AdminEventController extends AbstractController
     }
     public function add(): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $event = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // clean $_POST data
@@ -93,6 +103,11 @@ class AdminEventController extends AbstractController
 
     public function edit(int $id): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $eventManager = new EventManager();
         $event = $eventManager->selectOneById($id);
         $media = [];
@@ -106,8 +121,8 @@ class AdminEventController extends AbstractController
 
             if (empty($this->errors)) {
                 $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
-                $imageName = uniqid('', true) . '.' . $extension;
-                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+                $imageNameMain = uniqid('', true) . '.' . $extension;
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageNameMain);
                 $mediaManager = new MediaManager();
                 foreach ($images['name'] as $position => $imageName) {
                     $this->validateImage($images);
@@ -119,7 +134,7 @@ class AdminEventController extends AbstractController
                     $mediaManager->insert($media);
                 }
 
-                $event['image_link'] = $imageName;
+                $event['image_link'] = $imageNameMain;
                 $eventManager->update($event);
 
                 header('Location: /admin/evenements/');
@@ -138,6 +153,10 @@ class AdminEventController extends AbstractController
 
     public function delete(): void
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $eventManager = new EventManager();

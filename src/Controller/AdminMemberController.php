@@ -14,6 +14,11 @@ class AdminMemberController extends AbstractController
 
     public function index(): string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $memberManager = new MemberManager();
         $members = $memberManager->selectAll('name');
 
@@ -61,6 +66,11 @@ class AdminMemberController extends AbstractController
 
     public function edit(int $id): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $memberManager = new MemberManager();
         $member = $memberManager->selectOneById($id);
 
@@ -92,6 +102,11 @@ class AdminMemberController extends AbstractController
 
     public function add(): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $member = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $member = array_map('trim', $_POST);

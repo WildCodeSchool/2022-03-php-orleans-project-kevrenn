@@ -1,3 +1,46 @@
 section {
     margin-block-start: 4rem;
 }
+
+h2::before {
+    content: url('/assets/images/dentelle-gauche.png');
+    position: relative;
+    left: 50px;
+    top: 30px
+}
+
+h2::after {
+    content: url('/assets/images/dentelle-droite.png');
+    position: relative;
+    right: 50px;
+    top: 30px
+}
+
+.btn {
+
+    font-size: var(--text-size);
+    background-color: var(--bs-primary);
+
+}
+
+.btn:hover{
+    background-color: var(--bs-light);
+    color: var(--bs-primary);
+}
+
+.contact-image {
+
+max-height: 33vh;
+}
+
+@media screen and (max-width:700px) {
+    h2::before {
+        content: "";
+    }
+
+    h2::after {
+        content: "";
+    }
+    
+}
+

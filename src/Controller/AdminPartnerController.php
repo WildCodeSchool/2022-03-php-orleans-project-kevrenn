@@ -25,6 +25,11 @@ class AdminPartnerController extends AbstractController
 
     public function add(): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $partner = [];
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $partner = array_map('trim', $_POST);
@@ -49,6 +54,11 @@ class AdminPartnerController extends AbstractController
 
     public function edit(int $id): ?string
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+            return '';
+        }
         $partnerManager = new PartnerManager();
         $partner = $partnerManager->selectOneById($id);
 
@@ -103,6 +113,10 @@ class AdminPartnerController extends AbstractController
 
     public function delete(): void
     {
+        if ($this->getUser() === null) {
+            echo 'Pas autorisé';
+            header('HTTP/1.0 403 Forbidden');
+        }
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $id = trim($_POST['id']);
             $partnerManager = new PartnerManager();
