@@ -48,3 +48,17 @@ img {
     background-color: var(--bs-secondary);
     color: var(--bs-light);
 }
+
+@media screen and (max-width:700px) {
+    .lacetitle::before {
+        content: "";
+    }
+    
+    .lacetitle::after {
+        content: "";
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+}
