@@ -22,4 +22,9 @@ a:hover{
 
 .adminMembres img {
     width: 100px;
+    height: 100px;
+}
+
+.adminPartner img {
+    width: fit-content;
 }
