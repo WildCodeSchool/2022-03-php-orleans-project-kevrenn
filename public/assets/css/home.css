@@ -47,14 +47,10 @@ h2::after {
     filter: none;
 }
 
-.separation {
-    background-color: var(--bs-primary);
-    padding: 1px;
-    position: absolute;
-    height: 100%;
-    width: 1px;
-    left: 50%;
+.logoPartner img {
+    width: 175px;
 }
+
 
 .separationX {
     background-image: url('/assets/images/sep-lace-primary.png');
@@ -66,8 +62,16 @@ h2::after {
     background-image: url('/assets/images/sep-lace-white.png');
     background-size: contain;
     height: 2rem;
+}
+
+.separationX-white.top{
     top: -4rem;
 }
+
+.separationX-white.bottom{
+    top: 4rem;
+}
+
 
 @media screen and (max-width:700px) {
     h2::before {
@@ -85,10 +89,8 @@ h2::after {
     .members>h2::before, .partners>h2::before {
         content: "";
     }
-}
 
-@media screen and (max-width:1000px) {
-    .separation {
-        display: none;
+    .history {
+        padding-block-start: 0;
     }
 }

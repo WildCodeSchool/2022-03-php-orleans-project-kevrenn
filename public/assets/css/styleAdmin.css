@@ -11,8 +11,15 @@ button:hover{
     font-size: var(--text-size);
 }
 
-a:hover{
-    background-color: var(--bs-secondary);
+.btn:hover{
     color: var(--bs-light);
 }
 
+a:hover{
+    background-color: var(--bs-secondary);
+    color: var(--bs-primary-light);
+}
+
+.adminMembres img {
+    width: 100px;
+}

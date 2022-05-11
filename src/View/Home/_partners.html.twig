@@ -1,13 +1,14 @@
 <section class="partners d-flex flex-column justify-content-center bg-primary">
-	<div class="separationX-white position-relative"></div>
+	<div class="separationX-white top position-relative"></div>
 
 	<h2 class="card-title text-center text-light">Nos partenaires</h2>
 
 	<div class="container d-flex justify-content-around align-items-center mt-5 flex-wrap">
 		{% for partner in partners %}
-				<a href="{{ partner.url }}" class="logoPartner mx-4">
+				<a href="{{ partner.url }}" class="logoPartner">
 					<img class="img-fluid" src="/assets/images/{{ partner.logo_link }}" alt="{{ partner.name }}">
 				</a>
 		{% endfor %}
 	</div>
+	<div class="separationX-white bottom position-relative"></div>
 </section>
