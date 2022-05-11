@@ -11,13 +11,13 @@
 
 <form method="post" class="card d-flex flex-column w-50 m-auto p-2">
 	<input type="hidden" value="{{ workshop.id }}" name="id">
-	<label for="name">Nom</label>
+	<label for="name" class="pb-2 mt-3">Nom</label>
 	<input type="text" value="{{ workshop.name }}" name="name" id="name">
-	<label for="date">Date</label>
+	<label for="date" class="pb-2 mt-3">Date</label>
 	<input type="text" value="{{ workshop.date }}" name="date" id="date">
-	<label for="address">Adresse</label>
+	<label for="address" class="pb-2 mt-3">Adresse</label>
 	<input type="text" value="{{ workshop.address }}" name="address" id="address">
-	<label for="description">Description</label>
+	<label for="description" class="pb-2 mt-3">Description</label>
 	<textarea type="text" name="description" id="description" rows="7">{{ workshop.description }}</textarea>
 	<button class="btn w-25 my-2 align-self-center">Envoi</button>
 </form>
