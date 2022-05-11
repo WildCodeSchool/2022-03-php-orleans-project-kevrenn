@@ -84,42 +84,48 @@ VALUES (
     '',
     'Mariage Germignon',
     DATE '2022-04-09',
-    'Le Mariage Germignon',
+    "Bienvenue à cet événement, nous montrerons les activités en détail et cela se passera non loin de notre siège afin que toute personne de la région puisse nous rejoindre, vous pourrez entrer et participer à l'événement même si vous arrivez en retard ne vous inquiétez pas
+Cet événement est une idée magnifique pour tous les bretons et ils en profiteront jusqu'à la fin de leur vie, c'est une expérience incroyable avec de nombreuses activités, n'hésitez pas à nous contacter car nous pourrons vous donner beaucoup d'informations pour toutes questions et aucun doute je vous le promets, vous ne regretterez pas d'avoir essayé nos événements tant nous y mettons tout notre cœur",
     "Chateau d'Orléans"
   ),
   (
     '',
     'Rentrée en Féte',
-    DATE '2022-05-09',
-    'La Rentrée en Fête',
+    DATE '2022-04-09',
+    "Bienvenue à cet événement, nous montrerons les activités en détail et cela se passera non loin de notre siège afin que n'importe qui dans la région puisse nous rejoindre, vous pourrez entrer et participer à l'événement même si vous arrivez en retard alors ne vous inquiétez pas
+Cet événement est une idée magnifique pour tous les bretons et ils en profiteront jusqu'à la fin de leur vie, c'est une expérience incroyable avec de nombreuses activités, n'hésitez pas à nous contacter car nous pourrons vous donner beaucoup d'informations pour toutes questions et aucun doute je vous le promets, vous ne regretterez pas d'avoir essayé nos événements car nous y mettons tout notre coeur",
     "Cathédrale d'Orléans"
   ),
   (
     '',
     ' Mariage La Ferté',
-    DATE '2022-09-09',
-    'Le Mariage La Ferté',
+    DATE '2022-04-09',
+    "Bienvenue à cet événement, nous montrerons les activités en détail et cela se passera non loin de notre siège afin que n'importe qui dans la région puisse nous rejoindre, vous pourrez entrer et participer à l'événement même si vous arrivez en retard alors ne vous inquiétez pas
+Cet événement est une idée magnifique pour tous les bretons et ils en profiteront jusqu'à la fin de leur vie, c'est une expérience incroyable avec de nombreuses activités, n'hésitez pas à nous contacter car nous pourrons vous donner beaucoup d'informations pour toutes questions et aucun doute je vous le promets, vous ne regretterez pas d'avoir essayé nos événements car nous y mettons tout notre coeur",
     "Château d'Orléans"
   ),
   (
     '',
     'Mariage Germignon',
-    DATE '2022-04-09',
-    'Le Mariage Germignon',
+    DATE '2022-09-09',
+    "Bienvenue à cet événement, nous montrerons les activités en détail et cela se passera non loin de notre siège afin que n'importe qui dans la région puisse nous rejoindre, vous pourrez entrer et participer à l'événement même si vous arrivez en retard alors ne vous inquiétez pas
+Cet événement est une idée magnifique pour tous les bretons et ils en profiteront jusqu'à la fin de leur vie, c'est une expérience incroyable avec de nombreuses activités, n'hésitez pas à nous contacter car nous pourrons vous donner beaucoup d'informations pour toutes questions et aucun doute je vous le promets, vous ne regretterez pas d'avoir essayé nos événements car nous y mettons tout notre coeur",
     "Chateau d'Orléans"
   ),
   (
     '',
     'Rentrée en Féte',
-    DATE '2022-05-09',
-    'La Rentrée en Fête',
+    DATE '2022-09-09',
+    "Bienvenue à cet événement, nous montrerons les activités en détail et cela se passera non loin de notre siège afin que n'importe qui dans la région puisse nous rejoindre, vous pourrez entrer et participer à l'événement même si vous arrivez en retard alors ne vous inquiétez pas
+Cet événement est une idée magnifique pour tous les bretons et ils en profiteront jusqu'à la fin de leur vie, c'est une expérience incroyable avec de nombreuses activités, n'hésitez pas à nous contacter car nous pourrons vous donner beaucoup d'informations pour toutes questions et aucun doute je vous le promets, vous ne regretterez pas d'avoir essayé nos événements car nous y mettons tout notre coeur",
     "Cathédrale d'Orléans"
   ),
   (
     '',
     ' Mariage La Ferté',
     DATE '2022-09-09',
-    'Le Mariage La Ferté',
+    "Bienvenue à cet événement, nous montrerons les activités en détail et cela se passera non loin de notre siège afin que n'importe qui dans la région puisse nous rejoindre, vous pourrez entrer et participer à l'événement même si vous arrivez en retard alors ne vous inquiétez pas
+Cet événement est une idée magnifique pour tous les bretons et ils en profiteront jusqu'à la fin de leur vie, c'est une expérience incroyable avec de nombreuses activités, n'hésitez pas à nous contacter car nous pourrons vous donner beaucoup d'informations pour toutes questions et aucun doute je vous le promets, vous ne regretterez pas d'avoir essayé nos événements car nous y mettons tout notre coeur",
     "Château d'Orléans"
   );
 --
@@ -133,6 +139,6 @@ CREATE TABLE `partner` (
   `url` VARCHAR(255) NOT NULL);
 
 INSERT INTO `partner` (`name`, `logo_link`, `url`) VALUES
-('Association Warlleur', 'logo-warlleur.jpg', 'https://www.warleur.org/'),
-('Association Dastum', 'logo-dastum.jpg', 'https://www.dastum.bzh/'),
-('Association Tamm Kreiz', 'logo-tammkreiz.png', 'https://www.tamm-kreiz.bzh/');
+('Association Warlleur', 'https://upload.wikimedia.org/wikipedia/fr/1/19/Logo_War%27l_Leur_Horizontale.jpg', 'https://www.warleur.org/'),
+('Association Dastum', 'https://upload.wikimedia.org/wikipedia/fr/2/23/Dastum.jpg', 'https://www.dastum.bzh/'),
+('Association Tamm Kreiz', 'https://www.tamm-kreiz.bzh/skins/tk_responsive/images/header/logo-tk-cadre.png', 'https://www.tamm-kreiz.bzh/');

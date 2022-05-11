@@ -10,11 +10,11 @@
 
 <form method="post" class="card d-flex flex-column w-50 m-auto p-2">
 	<input type="hidden" value="{{ partner.id }}" name="id">
-	<label for="name">Nom</label>
+	<label for="name" class="pb-2 mt-3">Nom</label>
 	<input type="text" value="{{ partner.name }}" name="name" id="name">
-	<label for="url">Adresse du site</label>
+	<label for="url" class="pb-2 mt-3">Adresse du site</label>
 	<input type="url" value="{{ partner.url }}" name="url" id="url">
-	<label for="logo_link">Lien du logo</label>
+	<label for="logo_link" class="pb-2 mt-3">Lien du logo</label>
 	<input type="url" value="{{ partner.logo_link }}" name="logo_link" id="logo_link">
 
 	<button class="btn w-25 my-2 align-self-center">Envoi</button>

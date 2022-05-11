@@ -1,7 +1,7 @@
 {% extends 'layout_admin.html.twig' %}
 
 {% block content %}
-	<main>
+	<main class="adminPartner">
 		<h1 class="m-5 text-center">Admin partenaires</h1>
 		<div class="row container-fluid d-flex justify-content-center m-auto">
 			<a class="text-decoration-none btn col-lg-1 col-md-3 justify-self-center" href="/admin/partenaires/ajouter">Ajouter</a>
@@ -9,20 +9,22 @@
 		<div class="row container-fluid d-flex justify-content-center m-auto">
 			{% for partner in partners %}
 				<div class="card col-lg-3 m-2 d-flex flex-column justify-content-between">
-					<div class="d-flex m-3">
-						<div class="d-flex flex-column justify-content-center col-8 mt-2">
+					<div class="d-flex m-3 justify-content-center">
+						<div class="d-flex flex-column  mt-2">
 							<p class="fs-5">{{ partner.name }}</p>
 							<p class="fs-6">{{ partner.url }}</p>
 						</div>
-						<img class="m-2 align-self-center" src="/assets/images/{{ partner.logo_link }}" alt=" {{ partner.name }}" width="50%" height="50%">
+						<img class="m-2 align-self-center" src="{{ partner.logo_link }}" alt=" {{ partner.name }}" width="50%" height="50%">
+					</div
+					<div class="d-flex justify-content-center align-items-center my-3">
+						<a class="text-decoration-none btn" href="/admin/partenaires/modifier?id={{ partner.id }}">Modifier</a>
+						<div>
+							<form action="/admin/partenaires/supprimer" method="POST" onsubmit="return confirm('Etes-vous sûr de vouloir supprimer ce partenaire ?')">
+								<input type="hidden" name="id" value="{{ partner.id }}">
+								<button class="btn my-1">Supprimer</button>
+							</form>
+						</div>
 					</div>
-					<div class="d-flex justify-content-center mb-3">
-						<form action="/admin/partenaires/supprimer" method="POST" onSubmit="return confirm('Etes-vous sûr de vouloir supprimer ce partenaire ?')">
-							<input type="hidden" name="id" value="{{ partner.id }}">
-							<button class="btn my-1">Supprimer</button>
-						</form>
-					</div>
-					<a class="text-decoration-none btn align-self-center my-2" href="/admin/partenaires/modifier?id={{ partner.id }}">Modifier</a>
 				</div>
 			{% endfor %}
 		</div>
