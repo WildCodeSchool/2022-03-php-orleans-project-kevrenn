@@ -133,6 +133,6 @@ CREATE TABLE `partner` (
   `url` VARCHAR(255) NOT NULL);
 
 INSERT INTO `partner` (`name`, `logo_link`, `url`) VALUES
-('Association Warlleur', 'logo-warlleur.jpg', 'https://www.warleur.org/'),
-('Association Dastum', 'logo-dastum.jpg', 'https://www.dastum.bzh/'),
-('Association Tamm Kreiz', 'logo-tammkreiz.png', 'https://www.tamm-kreiz.bzh/');
+('Association Warlleur', 'https://upload.wikimedia.org/wikipedia/fr/1/19/Logo_War%27l_Leur_Horizontale.jpg', 'https://www.warleur.org/'),
+('Association Dastum', 'https://upload.wikimedia.org/wikipedia/fr/2/23/Dastum.jpg', 'https://www.dastum.bzh/'),
+('Association Tamm Kreiz', 'https://www.tamm-kreiz.bzh/skins/tk_responsive/images/header/logo-tk-cadre.png', 'https://www.tamm-kreiz.bzh/');
