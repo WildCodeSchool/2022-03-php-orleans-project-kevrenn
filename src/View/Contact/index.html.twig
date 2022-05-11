@@ -9,27 +9,30 @@
 	<main class="container">
 
 
-		<section class="contact">
-
+		<section class="contact vh-100">
 			<h2 class="title text-center lacetitle">Contact</h2>
+
+
 			{% if errors is not empty %}
-			<div class="alert alert-danger mt-5 w-50 position-relative start-25" role="alert">
-				<ul>
-					{% for error in errors %}
-						<li>
-							{{ error }}
-						</li>
-					{% endfor %}
-				</ul>
-			</div>
+				<div class="alert alert-danger mt-5 w-50 position-relative start-25" role="alert">
+					<ul>
+						{% for error in errors %}
+							<li>
+								{{ error }}
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
 			{% endif %}
 
-			<div class="row m-5 align-items-start">
-				<div class="col-md-6">
-					<img src="/assets/images/image-contact.jpg" class="w-100 mb-4" alt="bretonnes">
-				</div>
-				<form method="post" class="col-md-6 d-flex flex-column">
 
+			<div class="row my-5 justify-content-around align-items-start">
+				<div class="col-md-4">
+					<img src="/assets/images/image-contact.jpg" class="w-100" alt="bretonnes">
+
+				</div>
+
+				<form method="post" class="col-md-8 d-flex flex-column">
 					<div class="">
 						<label for="lastname" class="form-label">Nom</label>
 						<input type="lastname" class="form-control" value="{{ contact.lastname }}" name="lastname" id="lastname" aria-describedby="" placeholder="Gallouedec">
