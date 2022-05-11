@@ -17,13 +17,25 @@ header {
     background-position: 50% 0;
 }
 
-.header>h1, .header>h2 {
+.header>h1,
+.header>h2 {
     color: var(--bs-primary);
     z-index: 1;
     font-weight: bold;
     text-shadow: -1px -1px 0.2px var(--bs-dark), 1px 1px 0.2px var(--bs-light);
 }
 
-.header>h2::before, .header>h2::after {
+.header>h2::before,
+.header>h2::after {
     display: none;
+}
+
+@media screen and (max-width:700px) {
+    .header h1, .header h2 {
+        background-color: rgba(255, 255, 255, 0.3);
+        width: 100%;
+        margin: 0;
+        backdrop-filter: blur(10px);
+        text-shadow: -1px -1px 0.2px var(--bs-dark);
+    }
 }
