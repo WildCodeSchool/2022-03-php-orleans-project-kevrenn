@@ -5,7 +5,7 @@
 
 	<div class="container d-flex justify-content-around align-items-center mt-5 flex-wrap">
 		{% for partner in partners %}
-				<a href="{{ partner.url }}" class="logoPartner m-4">
+				<a href="{{ partner.url }}" class="logoPartner">
 					<img class="img-fluid" src="/assets/images/{{ partner.logo_link }}" alt="{{ partner.name }}">
 				</a>
 		{% endfor %}
