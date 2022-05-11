@@ -106,8 +106,8 @@ class AdminEventController extends AbstractController
 
             if (empty($this->errors)) {
                 $extension = pathinfo($imageFile['name'], PATHINFO_EXTENSION);
-                $imageName = uniqid('', true) . '.' . $extension;
-                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageName);
+                $imageNameMain = uniqid('', true) . '.' . $extension;
+                move_uploaded_file($imageFile['tmp_name'], UPLOAD_PATH . '/' . $imageNameMain);
                 $mediaManager = new MediaManager();
                 foreach ($images['name'] as $position => $imageName) {
                     $this->validateImage($images);
@@ -119,7 +119,7 @@ class AdminEventController extends AbstractController
                     $mediaManager->insert($media);
                 }
 
-                $event['image_link'] = $imageName;
+                $event['image_link'] = $imageNameMain;
                 $eventManager->update($event);
 
                 header('Location: /admin/evenements/');
