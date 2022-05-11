@@ -15,3 +15,14 @@ h2::after {
     right: 50px;
     top: 30px
 }
+
+@media screen and (max-width:700px) {
+    h2::before {
+        content: "";
+    }
+
+    h2::after {
+        content: "";
+    }
+    
+}
